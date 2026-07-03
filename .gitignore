@@ -2,3 +2,5 @@ node_modules/
 dist/
 *.tsbuildinfo
 .vite/
+bot/.env
+bot/node_modules/
