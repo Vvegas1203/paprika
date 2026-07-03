@@ -1,0 +1,20 @@
+id,module,topic,word,translation,image
+1,A1,Food,Apfel,Яблоко,images/apple.svg
+2,A1,Food,Brot,Хлеб,images/bread.svg
+3,A1,Food,Käse,Сыр,images/cheese.svg
+4,A1,Food,Milch,Молоко,images/milk.svg
+5,A1,Family,Mutter,Мама,images/mother.svg
+6,A1,Family,Vater,Папа,images/father.svg
+7,A1,Family,Bruder,Брат,images/brother.svg
+8,A1,Family,Schwester,Сестра,images/sister.svg
+9,A1,Home,Haus,Дом,images/house.svg
+10,A1,Home,der Tisch | Tische,Стол,images/table.svg
+11,A1,Home,der Stuhl | Stühle,стул,images/chair.png
+12,A1,Home,das Fenster | Fenster,окно,images/window.svg
+13,A1,Home,die Tür | Türen,дверь,images/door.svg
+14,A1,Home,das Bett | Betten,кровать,images/bed.svg
+15,A1,Home,der Schrank | Schränke,шкаф,images/cabinet.svg
+16,A1,Home,die Lampe | Lampen,лампа,images/lamp.svg
+17,A1,Home,die Küche | Küchen,кухня,images/kitchen.svg
+18,A1,Home,das Sofa | Sofas,диван,images/sofa.svg
+19,A1,Home,der Kühlschrank | Kühlschränke,холодильник,images/refrigerator.svg
