@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 interface Props {
   topicName: string;
   known: number;
@@ -13,14 +11,9 @@ interface Props {
 }
 
 export default function TopicResult({ topicName, known, unknown, total, sessionTotal, onBackToTopics, onBackToModules, onStartTest, isComplete }: Props) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [showDetails, setShowDetails] = useState(false);
   // Use sessionTotal for percentage if available, otherwise use total
   const actualTotal = sessionTotal ?? total;
   const percent = actualTotal > 0 ? Math.round((known / actualTotal) * 100) : 0;
-
-  // useEffect удален - не используется
-  void showDetails;
 
   return (
     <div className="screen topic-result-screen">

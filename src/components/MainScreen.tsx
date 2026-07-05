@@ -34,8 +34,6 @@ function getDateDaysAgo(days: number): { dateStr: string; dayLetter: string } {
 }
 
 export default function MainScreen({ 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  words, 
   knownCount, 
   modulePercent, 
   dailyGoalPercent, 
@@ -43,8 +41,6 @@ export default function MainScreen({
   weekStats,
   onDayClick,
   onStartLearning, 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onExit, 
   onBlitz 
 }: Props) {
   return (

@@ -13,11 +13,9 @@ import TestModal from './components/TestModal';
 import DayStatsModal from './components/DayStatsModal';
 import './App.css';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type Mode = 'learning';
-
 const BLITZ_COUNT = 10;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+// DAILY_GOAL used for reference, kept for documentation
 const DAILY_GOAL = 20;
 
 function shuffle<T>(arr: T[]): T[] {
@@ -71,8 +69,9 @@ const {
 // Test modal state
   const [showTestModal, setShowTestModal] = useState(false);
   const [pendingTopic, setPendingTopic] = useState('');
+  // Note: repeatTopic kept for future feature
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [repeatTopic, setRepeatTopic] = useState(false);
+  const [_repeatTopic, setRepeatTopic] = useState(false);
   const [isTopicTest, setIsTopicTest] = useState(false); // Track if we're in topic test mode
 
   // Day stats modal
@@ -174,11 +173,7 @@ const {
     }
   };
 
-  const handleStartLearning = () => {
-    setScreen('modules');
-  };
-
-  const handleStartRepetition = () => {
+const handleStartLearning = () => {
     setScreen('modules');
   };
 
@@ -315,10 +310,6 @@ const handleBlitzAnswer = (answer: string) => {
 
 const handleBlitzFinish = () => {
     setScreen('blitz-result');
-  };
-
-  const handleBlitzRetry = () => {
-    handleBlitz();
   };
 
   const handleTopicTestRetry = () => {
