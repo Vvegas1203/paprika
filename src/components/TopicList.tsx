@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Word } from '../utils/types';
 import { getTopics } from '../utils/csvParser';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   words: Word[];
@@ -49,6 +50,7 @@ function getTopicStatus(known: number, isDone: boolean): TopicStatus {
 }
 
 export default function TopicList({ words, moduleName, knownCounts, totalCounts, isFullyKnown, onSelect, onBack }: Props) {
+  const { t, translateTopic } = useLanguage();
   const topics = getTopics(words, moduleName);
   const [isMoreExpanded, setIsMoreExpanded] = useState(false);
   const [isCompletedExpanded, setIsCompletedExpanded] = useState(false);
@@ -91,22 +93,22 @@ export default function TopicList({ words, moduleName, knownCounts, totalCounts,
   return (
     <div className="screen topic-list-screen">
       <button className="btn btn-nav-back" onClick={onBack}>
-        ← Назад
+        {t.back}
       </button>
-      <h2 className="topic-list-title">{moduleName} — Topics</h2>
+      <h2 className="topic-list-title">{moduleName} — {t.topics}</h2>
 
       {/* Main visible topics (first 2) */}
       <div className="topic-tile-grid">
-        {primaryTopics.map((t) => {
-          const display = getTopicDisplay(t);
-          const known = knownCounts[t] ?? 0;
-          const total = totalCounts[t] ?? 0;
+        {primaryTopics.map((topic) => {
+          const display = getTopicDisplay(topic);
+          const known = knownCounts[topic] ?? 0;
+          const total = totalCounts[topic] ?? 0;
           const percent = total > 0 ? Math.round((known / total) * 100) : 0;
           
           return (
-            <div key={t} className="topic-tile" onClick={() => onSelect(t)}>
+            <div key={topic} className="topic-tile" onClick={() => onSelect(topic)}>
               <div className="topic-tile-emoji">{display.emoji}</div>
-              <div className="topic-tile-name">{display.label}</div>
+              <div className="topic-tile-name">{translateTopic(display.label)}</div>
               <div className="topic-tile-progress">
                 <div className="topic-tile-bar">
                   <div className="topic-tile-fill" style={{ width: `${percent}%` }} />
@@ -125,24 +127,24 @@ export default function TopicList({ words, moduleName, knownCounts, totalCounts,
             className="topic-collapsible-header"
             onClick={() => setIsMoreExpanded((v) => !v)}
           >
-            <span>Ещё темы ({extraTopics.length})</span>
+            <span>{t.moreTopics} ({extraTopics.length})</span>
             <span className="topic-collapsible-icon">{isMoreExpanded ? '▲' : '▼'}</span>
           </button>
           <div className={`topic-collapsible-content ${isMoreExpanded ? 'expanded' : ''}`}>
             {isMoreExpanded && extraTopics.length > 6 && (
-              <div className="topic-collapsible-scroll-hint">↕ Потяните для прокрутки</div>
+              <div className="topic-collapsible-scroll-hint">{t.scrollForMore}</div>
             )}
             <div className="topic-tile-grid">
-              {extraTopics.map((t) => {
-                const display = getTopicDisplay(t);
-                const known = knownCounts[t] ?? 0;
-                const total = totalCounts[t] ?? 0;
+              {extraTopics.map((topic) => {
+                const display = getTopicDisplay(topic);
+                const known = knownCounts[topic] ?? 0;
+                const total = totalCounts[topic] ?? 0;
                 const percent = total > 0 ? Math.round((known / total) * 100) : 0;
                 
                 return (
-                  <div key={t} className="topic-tile" onClick={() => onSelect(t)}>
+                  <div key={topic} className="topic-tile" onClick={() => onSelect(topic)}>
                     <div className="topic-tile-emoji">{display.emoji}</div>
-                    <div className="topic-tile-name">{display.label}</div>
+                    <div className="topic-tile-name">{translateTopic(display.label)}</div>
                     <div className="topic-tile-progress">
                       <div className="topic-tile-bar">
                         <div className="topic-tile-fill" style={{ width: `${percent}%` }} />
@@ -154,7 +156,7 @@ export default function TopicList({ words, moduleName, knownCounts, totalCounts,
               })}
             </div>
             {isMoreExpanded && extraTopics.length > 6 && (
-              <div className="topic-collapsible-scroll-hint">↕ Потяните для прокрутки</div>
+              <div className="topic-collapsible-scroll-hint">{t.scrollForMore}</div>
             )}
           </div>
         </div>
@@ -167,28 +169,28 @@ export default function TopicList({ words, moduleName, knownCounts, totalCounts,
             className="topic-collapsible-header"
             onClick={() => setIsCompletedExpanded((v) => !v)}
           >
-            <span>Пройдено ({completedTopics.length})</span>
+            <span>{t.completed} ({completedTopics.length})</span>
             <span className="topic-collapsible-icon">{isCompletedExpanded ? '▲' : '▼'}</span>
           </button>
           <div className={`topic-collapsible-content ${isCompletedExpanded ? 'expanded' : ''}`}>
             {isCompletedExpanded && completedTopics.length > 6 && (
-              <div className="topic-collapsible-scroll-hint">↕ Потяните для прокрутки</div>
+              <div className="topic-collapsible-scroll-hint">{t.scrollForMore}</div>
             )}
             <div className="topic-tile-grid">
-              {completedTopics.map((t) => {
-                const display = getTopicDisplay(t);
+              {completedTopics.map((topic) => {
+                const display = getTopicDisplay(topic);
                 
                 return (
-                  <div key={t} className="topic-tile topic-tile-done" onClick={() => onSelect(t)}>
+                  <div key={topic} className="topic-tile topic-tile-done" onClick={() => onSelect(topic)}>
                     <div className="topic-tile-emoji">{display.emoji}</div>
-                    <div className="topic-tile-name">{display.label}</div>
+                    <div className="topic-tile-name">{translateTopic(display.label)}</div>
                     <div className="topic-tile-check">✓</div>
                   </div>
                 );
               })}
             </div>
             {isCompletedExpanded && completedTopics.length > 6 && (
-              <div className="topic-collapsible-scroll-hint">↕ Потяните для прокрутки</div>
+              <div className="topic-collapsible-scroll-hint">{t.scrollForMore}</div>
             )}
           </div>
         </div>

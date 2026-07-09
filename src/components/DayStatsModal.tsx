@@ -1,4 +1,5 @@
 import { DayStats } from '../utils/types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   date: string;
@@ -7,6 +8,9 @@ interface Props {
 }
 
 export default function DayStatsModal({ date, stats, onClose }: Props) {
+  const { t } = useLanguage();
+  const DAY_LETTERS = [t.sun, t.mon, t.tue, t.wed, t.thu, t.fri, t.sat];
+
   // Format date for display
   const formatDate = (dateStr: string): string => {
     const parts = dateStr.split('-');
@@ -16,8 +20,7 @@ export default function DayStatsModal({ date, stats, onClose }: Props) {
   // Get day name from date
   const getDayName = (dateStr: string): string => {
     const date = new Date(dateStr);
-    const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
-    return days[date.getDay()];
+    return DAY_LETTERS[date.getDay()];
   };
 
   return (
@@ -32,25 +35,25 @@ export default function DayStatsModal({ date, stats, onClose }: Props) {
         {stats ? (
           <div className="day-stats-content">
             <div className="day-stat-item">
-              <span className="day-stat-label">Выучено слов</span>
+              <span className="day-stat-label">{t.wordsLearned}</span>
               <span className="day-stat-value">{stats.wordsLearned}</span>
             </div>
             <div className="day-stat-item">
-              <span className="day-stat-label">Просмотрено карточек</span>
+              <span className="day-stat-label">{t.cardsViewed}</span>
               <span className="day-stat-value">{stats.cardsViewed}</span>
             </div>
             <div className="day-stat-item">
-              <span className="day-stat-label">Отмечено "Знаю"</span>
+              <span className="day-stat-label">{t.knownMarked}</span>
               <span className="day-stat-value">{stats.cardsKnown}</span>
             </div>
             <div className="day-stat-item">
-              <span className="day-stat-label">Пройдено Blitz тестов</span>
+              <span className="day-stat-label">{t.blitzTestsPassed}</span>
               <span className="day-stat-value">{stats.blitzCompleted}</span>
             </div>
           </div>
         ) : (
           <div className="day-stats-empty">
-            Нет активности за этот день
+            {t.noActivity}
           </div>
         )}
       </div>

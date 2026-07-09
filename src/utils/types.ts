@@ -9,7 +9,7 @@ export interface Word {
 
 export type CardStatus = 'known' | 'learning' | null;
 
-export type Screen = 'main' | 'modules' | 'topics' | 'cards' | 'topic-result' | 'blitz' | 'blitz-result';
+export type Screen = 'main' | 'modules' | 'topics' | 'cards' | 'topic-result' | 'blitz' | 'blitz-result' | 'grammar-levels' | 'grammar-topics' | 'grammar-lesson' | 'grammar-practice';
 
 export interface BlitzCard {
   word: Word;

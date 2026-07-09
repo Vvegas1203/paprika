@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback } from 'react';
 import { Word } from '../utils/types';
 import Card from './Card';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   word: Word;
@@ -11,6 +12,7 @@ interface Props {
 const SWIPE_THRESHOLD = 80;
 
 export default function SwipeableCard({ word, onSwipeLeft, onSwipeRight }: Props) {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const [startX, setStartX] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
@@ -72,8 +74,8 @@ export default function SwipeableCard({ word, onSwipeLeft, onSwipeRight }: Props
 
   return (
     <div className="swipeable-card-wrapper">
-      <div className="swipe-hint swipe-hint-left">Учу</div>
-      <div className="swipe-hint swipe-hint-right">Знаю</div>
+      <div className="swipe-hint swipe-hint-left">{t.learnSwipe}</div>
+      <div className="swipe-hint swipe-hint-right">{t.knowSwipe}</div>
       <div
         ref={containerRef}
         className={`swipeable-card ${exitClass}`}
@@ -97,13 +99,13 @@ export default function SwipeableCard({ word, onSwipeLeft, onSwipeRight }: Props
           className="swipe-overlay swipe-overlay-left"
           style={{ opacity: Math.max(0, -offsetX / SWIPE_THRESHOLD) }}
         >
-          Учу
+          {t.learnOverlay}
         </div>
         <div
           className="swipe-overlay swipe-overlay-right"
           style={{ opacity: Math.max(0, offsetX / SWIPE_THRESHOLD) }}
         >
-          Знаю
+          {t.knowOverlay}
         </div>
         <Card word={word} />
       </div>

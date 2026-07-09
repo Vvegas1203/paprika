@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// useState и useEffect удалены - они не используются в этом компоненте
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   topicName: string;
@@ -9,21 +8,23 @@ interface Props {
 }
 
 export default function TestModal({ topicName, onStartTest, onRepeat, onClose }: Props) {
+  const { t } = useLanguage();
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>
           ×
         </button>
-        <h2>Тема изучена!</h2>
-        <p>Вы полностью изучили тему "{topicName}"</p>
-        <p>Что хотите сделать?</p>
+        <h2>{t.topicStudied}</h2>
+        <p>{t.topicStudiedDesc} "{topicName}"</p>
+        <p>{t.whatToDo}</p>
         <div className="modal-buttons">
           <button className="btn btn-start" onClick={onStartTest}>
-            Пройти тест
+            {t.takeTest}
           </button>
           <button className="btn btn-back" onClick={onRepeat}>
-            Повторить карточки
+            {t.repeatCards}
           </button>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Word } from '../utils/types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   word: Word;
@@ -7,6 +8,8 @@ interface Props {
 
 export default function Card({ word }: Props) {
   const [flipped, setFlipped] = useState(false);
+  const { getTranslation } = useLanguage();
+  const localizedTranslation = getTranslation(word.id, word.translation);
 
   return (
     <div className="card-container" onClick={() => setFlipped(!flipped)}>
@@ -31,7 +34,7 @@ export default function Card({ word }: Props) {
               (e.target as HTMLImageElement).style.display = 'none';
             }}
           />
-          <div className="card-word">{word.translation}</div>
+          <div className="card-word">{localizedTranslation}</div>
         </div>
       </div>
     </div>

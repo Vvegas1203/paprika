@@ -1,0 +1,1872 @@
+{
+  "topics": [
+    {
+      "id": "articles",
+      "level": "A1",
+      "title": "Articles",
+      "icon": "📚",
+      "order": 1,
+      "description": "Learn German articles: definite (der, die, das) and indefinite (ein, eine, einen, etc.) articles, including their gender and case forms.",
+      "lessons": [
+        {
+          "id": "definite_articles",
+          "topicId": "articles",
+          "title": "Definite Articles",
+          "explanation": "German has three definite articles: der (masculine), die (feminine), das (neuter). They show the gender and case of the noun. In the nominative case (subject), they are: der Mann, die Frau, das Kind. The article always agrees with the noun's gender — this is fixed for each noun and must be learned together with the word.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Masculine nouns take 'der' in the nominative case (subject position).",
+              "examples": [
+                { "german": "der Mann (the man)", "english": "the man" },
+                { "german": "der Tisch (the table)", "english": "the table" },
+                { "german": "der Apfel (the apple)", "english": "the apple" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Feminine nouns take 'die' in the nominative case.",
+              "examples": [
+                { "german": "die Frau (the woman)", "english": "the woman" },
+                { "german": "die Katze (the cat)", "english": "the cat" },
+                { "german": "die Schule (the school)", "english": "the school" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Neuter nouns take 'das' in the nominative case.",
+              "examples": [
+                { "german": "das Kind (the child)", "english": "the child" },
+                { "german": "das Haus (the house)", "english": "the house" },
+                { "german": "das Buch (the book)", "english": "the book" }
+              ]
+            },
+            {
+              "id": "rule_4",
+              "text": "In the accusative case (direct object), masculine changes der → den; feminine and neuter stay the same.",
+              "examples": [
+                { "german": "Ich sehe den Mann (accusative masculine)", "english": "I see the man" },
+                { "german": "Ich sehe die Frau (accusative feminine)", "english": "I see the woman" },
+                { "german": "Ich sehe das Kind (accusative neuter)", "english": "I see the child" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Der Mann liest ein Buch", "english": "The man reads a book" },
+            { "german": "Die Frau trinkt das Wasser", "english": "The woman drinks the water" },
+            { "german": "Das Kind spielt im Garten", "english": "The child plays in the garden" }
+          ],
+          "exceptions": [
+            { "german": "Gender is not based on biology", "english": "das Mädchen (the girl) is neuter because of the -chen suffix, even though a girl is female" },
+            { "german": "Diminutives are always neuter", "english": "das Häuschen, das Fräulein — words ending in -chen or -lein are always das" }
+          ],
+          "importantNotes": [
+            "Memorize every noun together with its article (der Apfel, die Banane).",
+            "The article tells you the gender — do not guess from meaning.",
+            "Plural of all genders uses 'die': die Männer, die Frauen, die Kinder."
+          ],
+          "commonMistakes": [
+            { "german": "die Mann (wrong)", "english": "Should be: der Mann — Mann is masculine" },
+            { "german": "das Frau (wrong)", "english": "Should be: die Frau — Frau is feminine" }
+          ],
+          "order": 1
+        },
+        {
+          "id": "indefinite_articles",
+          "topicId": "articles",
+          "title": "Indefinite Articles",
+          "explanation": "Indefinite articles (ein, eine, einen, einem, einer) mean 'a' or 'an'. They are used for singular countable nouns when we do not specify which one. Like definite articles, they change by gender and case: ein (masc. nom/acc), eine (fem. nom/acc), ein (neut. nom/acc), einem (masc/neut. dat), einer (fem. dat).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Masculine singular takes 'ein' in nominative and accusative.",
+              "examples": [
+                { "german": "ein Mann (a man)", "english": "a man" },
+                { "german": "Ich sehe einen Mann (accusative)", "english": "I see a man" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Feminine singular takes 'eine' in nominative and accusative.",
+              "examples": [
+                { "german": "eine Frau (a woman)", "english": "a woman" },
+                { "german": "Ich sehe eine Frau (accusative)", "english": "I see a woman" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Neuter singular takes 'ein' in nominative and accusative.",
+              "examples": [
+                { "german": "ein Kind (a child)", "english": "a child" },
+                { "german": "ein Haus (a house)", "english": "a house" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich brauche ein Buch", "english": "I need a book" },
+            { "german": "Sie hat eine Schwester", "english": "She has a sister" },
+            { "german": "Das ist ein interessanter Film", "english": "That is an interesting film" }
+          ],
+          "exceptions": [
+            { "german": "No indefinite article in plural", "english": "We use 'kein' (no) or zero article: Ich habe Bücher (I have books)" }
+          ],
+          "importantNotes": [
+            "After negation 'kein' follows the same pattern as 'ein'.",
+            "Indefinite articles never appear in the plural."
+          ],
+          "commonMistakes": [
+            { "german": "eine Mann (wrong)", "english": "Should be: ein Mann — Mann is masculine" },
+            { "german": "ein Frau (wrong)", "english": "Should be: eine Frau — Frau is feminine" }
+          ],
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "personal_pronouns",
+      "level": "A1",
+      "title": "Personal Pronouns",
+      "icon": "👤",
+      "order": 2,
+      "description": "Learn German personal pronouns in nominative: ich, du, er, sie, es, wir, ihr, sie, Sie — and how they change by case.",
+      "lessons": [
+        {
+          "id": "subject_pronouns",
+          "topicId": "personal_pronouns",
+          "title": "Subject Pronouns (Nominative)",
+          "explanation": "Personal pronouns replace nouns in sentences. German has formal and informal forms. They are ALWAYS capitalized in German (Ich, Du, Er...). The nominative case is used when the pronoun is the subject (who does the action).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "ich (I) — first person singular",
+              "examples": [
+                { "german": "Ich heiße Anna", "english": "My name is Anna" },
+                { "german": "Ich komme aus Deutschland", "english": "I come from Germany" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "du (you) — informal singular, used with friends, family, children",
+              "examples": [
+                { "german": "Du bist mein Freund", "english": "You are my friend" },
+                { "german": "Wie heißt du?", "english": "What's your name?" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "er / sie / es (he / she / it) — third person singular, matching gender of the noun",
+              "examples": [
+                { "german": "Er arbeitet im Büro (he = der Mann)", "english": "He works in the office" },
+                { "german": "Sie ist Lehrerin (she = die Frau)", "english": "She is a teacher" },
+                { "german": "Es ist klein (it = das Kind)", "english": "It is small" }
+              ]
+            },
+            {
+              "id": "rule_4",
+              "text": "wir (we) — first person plural",
+              "examples": [
+                { "german": "Wir lernen Deutsch", "english": "We learn German" },
+                { "german": "Wir spielen Fußball", "english": "We play football" }
+              ]
+            },
+            {
+              "id": "rule_5",
+              "text": "ihr (you) — informal plural, used with a group of friends/family",
+              "examples": [
+                { "german": "Ihr kommt aus Berlin", "english": "You (pl.) come from Berlin" },
+                { "german": "Ihr lernt gut", "english": "You learn well" }
+              ]
+            },
+            {
+              "id": "rule_6",
+              "text": "sie (they) / Sie (you, formal) — third person plural OR formal singular/plural",
+              "examples": [
+                { "german": "Sie lesen Bücher (they)", "english": "They read books" },
+                { "german": "Sind Sie Deutsch? (formal you)", "english": "Are you German?" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich lese, du schaust, er schläft", "english": "I read, you watch, he sleeps" },
+            { "german": "Wir gehen, ihr kommt, sie bleiben", "english": "We go, you come, they stay" }
+          ],
+          "exceptions": [
+            { "german": "Capitalization", "english": "All personal pronouns are capitalized in German: Ich, Du, Er, Sie..." }
+          ],
+          "importantNotes": [
+            "The formal 'Sie' looks identical to plural 'sie' but is ALWAYS capitalized and uses plural verb forms.",
+            "Use 'du' with one person you know well; use 'Sie' with strangers, elders, in business.",
+            "There is no separate word for 'it' by person — 'es' is used for neuter nouns and things."
+          ],
+          "commonMistakes": [
+            { "german": "ich (wrong)", "english": "Should be capitalized: Ich" },
+            { "german": "sie (for formal you, lowercase)", "english": "Should be capitalized when formal: Sie" }
+          ],
+          "order": 1
+        },
+        {
+          "id": "object_pronouns",
+          "topicId": "personal_pronouns",
+          "title": "Object Pronouns (Accusative & Dative)",
+          "explanation": "When pronouns are NOT the subject, they change form by case. Accusative (direct object) and dative (indirect object) forms are essential at A1.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Accusative pronouns: mich, dich, ihn, sie, es, uns, euch, sie, Sie",
+              "examples": [
+                { "german": "Ich sehe ihn (I see him)", "english": "I see him" },
+                { "german": "Er liebt sie (He loves her)", "english": "He loves her" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Dative pronouns: mir, dir, ihm, ihr, ihm, uns, euch, ihnen, Ihnen",
+              "examples": [
+                { "german": "Er gibt mir das Buch (He gives me the book)", "english": "He gives me the book" },
+                { "german": "Ich helfe dir (I help you)", "english": "I help you" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Kannst du mir helfen?", "english": "Can you help me?" },
+            { "german": "Wir besuchen sie am Sonntag", "english": "We visit them on Sunday" }
+          ],
+          "exceptions": [
+            { "german": "es stays 'es' in both accusative and dative", "english": "Ich sehe es / Er gibt es mir" }
+          ],
+          "importantNotes": [
+            "Dative answers 'wem?' (to/for whom).",
+            "Accusative answers 'wen?' (whom)."
+          ],
+          "commonMistakes": [
+            { "german": "Ich sehe er (wrong)", "english": "Should be: Ich sehe ihn (accusative)" },
+            { "german": "Er gibt mich das Buch (wrong)", "english": "Should be: Er gibt mir das Buch (dative)" }
+          ],
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "verb_conjugation",
+      "level": "A1",
+      "title": "Verb Conjugation",
+      "icon": "🔄",
+      "order": 3,
+      "description": "Learn how to conjugate regular and irregular verbs in the present tense, including the key verbs sein, haben, werden.",
+      "lessons": [
+        {
+          "id": "present_tense_regular",
+          "topicId": "verb_conjugation",
+          "title": "Present Tense — Regular Verbs",
+          "explanation": "Regular verbs (weak verbs) follow a predictable pattern. Remove the infinitive ending -en to get the stem, then add personal endings. The stem never changes. Example: machen → mach- + e/st/t/en/t/en.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Remove -en to get the stem: machen → mach-",
+              "examples": [
+                { "german": "ich mache", "english": "I make / do" },
+                { "german": "du machst", "english": "you make (inf.)" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Add endings: -e, -st, -t, -en, -t, -en (ich, du, er/sie/es, wir, ihr, sie/Sie)",
+              "examples": [
+                { "german": "er/sie/es macht", "english": "he/she/it makes" },
+                { "german": "wir machen", "english": "we make" },
+                { "german": "ihr macht", "english": "you (pl.) make" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Verbs ending in -s, -ß, -z add only -t for du (no extra -st): heißen → du heißt",
+              "examples": [
+                { "german": "du heißt (not heißst)", "english": "you are called" },
+                { "german": "du sitzt (sitzen)", "english": "you sit" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich lerne Deutsch", "english": "I learn German" },
+            { "german": "Wir spielen Fußball", "english": "We play football" },
+            { "german": "Er arbeitet im Büro", "english": "He works in the office" }
+          ],
+          "exceptions": [],
+          "importantNotes": [
+            "The conjugated verb is always in POSITION 2 of a main clause.",
+            "Learn the stem and apply the same endings to all regular verbs."
+          ],
+          "commonMistakes": [
+            { "german": "ich machen (wrong)", "english": "Should be: ich mache" },
+            { "german": "du machst (correct) but du heißst (wrong)", "english": "heißen → du heißt" }
+          ],
+          "order": 1
+        },
+        {
+          "id": "present_tense_irregular",
+          "topicId": "verb_conjugation",
+          "title": "Present Tense — Irregular Verbs",
+          "explanation": "Irregular verbs (strong and mixed) change their stem vowel in the present tense for du and er/sie/es. The endings are the same as regular verbs. The most important ones to learn first are sein (to be), haben (to have), and werden (to become).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Strong verbs change the vowel: sehen → ich sehe, du siehst, er sieht",
+              "examples": [
+                { "german": "sehen: ich sehe, du siehst, er sieht", "english": "see: I see, you see, he sees" },
+                { "german": "geben: ich gebe, du gibst, er gibt", "english": "give: I give, you give, he gives" },
+                { "german": "lesen: ich lese, du liest, er liest", "english": "read: I read, you read, he reads" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Mixed verbs keep stem change only in du/er: finden → ich finde, du findest, er findet",
+              "examples": [
+                { "german": "finden: ich finde, du findest, er findet", "english": "find: I find, you find, he finds" },
+                { "german": "kennen: ich kenne, du kennst, er kennt", "english": "know: I know, you know, he knows" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "sein (to be) is completely irregular: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind",
+              "examples": [
+                { "german": "Ich bin müde", "english": "I am tired" },
+                { "german": "Wir sind zu Hause", "english": "We are at home" }
+              ]
+            },
+            {
+              "id": "rule_4",
+              "text": "haben (to have): ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben",
+              "examples": [
+                { "german": "Ich habe ein Auto", "english": "I have a car" },
+                { "german": "Er hat Zeit", "english": "He has time" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich gehe ins Kino", "english": "I go to the cinema" },
+            { "german": "Sie kommt um 18 Uhr", "english": "She comes at 6 PM" },
+            { "german": "Wir essen Pizza", "english": "We eat pizza" }
+          ],
+          "exceptions": [
+            { "german": "sein, haben, werden — the three key auxiliaries", "english": "Must be memorized separately; they appear in almost every sentence" }
+          ],
+          "importantNotes": [
+            "Learn sein and haben FIRST — they are used everywhere.",
+            "Only du and er/sie/es get the vowel change in strong verbs; ich, wir, ihr stay normal."
+          ],
+          "commonMistakes": [
+            { "german": "ich bin (correct) but er sind (wrong)", "english": "Should be: er ist" },
+            { "german": "wir sehen (correct) but er siehen (wrong)", "english": "Should be: er sieht" }
+          ],
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "present_tense",
+      "level": "A1",
+      "title": "Present Tense",
+      "icon": "⏱️",
+      "order": 4,
+      "description": "Master the present tense (Präsens) for describing current actions, habits, facts, and scheduled future events.",
+      "lessons": [
+        {
+          "id": "present_tense_usage",
+          "topicId": "present_tense",
+          "title": "Present Tense Usage",
+          "explanation": "The German present tense (Präsens) is very versatile. It describes actions happening now, daily routines, general facts, and — unlike English — also scheduled future events when a time word is present.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Used for actions happening now (with 'gerade' or 'jetzt')",
+              "examples": [
+                { "german": "Ich lerne gerade Deutsch", "english": "I am (just) learning German now" },
+                { "german": "Er arbeitet im Garten", "english": "He is working in the garden" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Used for daily routines and habits (with time expressions like 'jeden Tag')",
+              "examples": [
+                { "german": "Ich gehe jeden Tag zur Arbeit", "english": "I go to work every day" },
+                { "german": "Sie schläft um 22 Uhr", "english": "She sleeps at 10 PM" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Used for scheduled future events (present + future time word)",
+              "examples": [
+                { "german": "Ich fliege morgen nach Berlin", "english": "I fly to Berlin tomorrow" },
+                { "german": "Der Film beginnt um 20 Uhr", "english": "The film begins at 8 PM" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich wohne in Berlin", "english": "I live in Berlin (permanent state)" },
+            { "german": "Wir essen zu Abend", "english": "We eat dinner" },
+            { "german": "Das Wetter ist heute schön", "english": "The weather is nice today" }
+          ],
+          "exceptions": [
+            { "german": "Future with 'werden'", "english": "For emphasis on the future, use ich werde ...: Ich werde morgen kommen (I will come tomorrow)" }
+          ],
+          "importantNotes": [
+            "German present covers English present simple AND present continuous.",
+            "For ongoing actions, add 'gerade' (right now) — there is no separate -ing form."
+          ],
+          "commonMistakes": [
+            { "german": "Ich lerne jetzt Deutsch (acceptable but)", "english": "Better with gerade: Ich lerne gerade Deutsch" },
+            { "german": "Ihr haben (wrong)", "english": "Should be: ihr habt" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "modal_verbs",
+      "level": "A1",
+      "title": "Modal Verbs",
+      "icon": "🔑",
+      "order": 5,
+      "description": "Learn modal verbs: können, müssen, wollen, sollen, mögen/möchte, dürfen — and the two-verb sentence structure.",
+      "lessons": [
+        {
+          "id": "basic_modal_verbs",
+          "topicId": "modal_verbs",
+          "title": "Basic Modal Verbs",
+          "explanation": "Modal verbs express ability, permission, obligation, desire, or preference. They have a special conjugation (no -t in er/sie/es) and they 'push' the main verb to the END of the sentence in its infinitive form. Structure: subject + modal (conjugated) + ... + main verb (infinitive).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "können (can / be able to): ich kann, du kannst, er kann, wir können, ihr könnt, sie können",
+              "examples": [
+                { "german": "Ich kann Deutsch sprechen", "english": "I can speak German" },
+                { "german": "Kann ich helfen?", "english": "Can I help?" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "müssen (must / have to): ich muss, du musst, er muss...",
+              "examples": [
+                { "german": "Ich muss lernen", "english": "I must study" },
+                { "german": "Du musst gehen", "english": "You have to leave" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "wollen (want to): ich will, du willst, er will...",
+              "examples": [
+                { "german": "Ich will Wasser trinken", "english": "I want to drink water" },
+                { "german": "Wir wollen fahren", "english": "We want to travel" }
+              ]
+            },
+            {
+              "id": "rule_4",
+              "text": "möchte (would like — polite form of mögen): ich möchte, du möchtest, er möchte...",
+              "examples": [
+                { "german": "Ich möchte einen Kaffee", "english": "I would like a coffee" },
+                { "german": "Was möchtest du essen?", "english": "What would you like to eat?" }
+              ]
+            },
+            {
+              "id": "rule_5",
+              "text": "dürfen (may / be allowed to): ich darf, du darfst, er darf...",
+              "examples": [
+                { "german": "Ich darf nicht rauchen", "english": "I am not allowed to smoke" },
+                { "german": "Darf ich hereinkommen?", "english": "May I come in?" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich kann schwimmen", "english": "I can swim" },
+            { "german": "Wir müssen arbeiten", "english": "We have to work" },
+            { "german": "Er möchte schlafen", "english": "He would like to sleep" }
+          ],
+          "exceptions": [
+            { "german": "Two-verb rule", "english": "The main verb stays in infinitive at the END: Ich möchte gehen (NOT ich gehe möchte)" }
+          ],
+          "importantNotes": [
+            "Modal verbs have NO -t ending for er/sie/es (er kann, not er kannt).",
+            "Use 'möchte' for polite requests instead of 'will'."
+          ],
+          "commonMistakes": [
+            { "german": "Ich möchte gehen (correct!) but ich will nicht gehen (correct)", "english": "Do not say 'ich gehe möchte' — verb goes to the end" },
+            { "german": "er kannst (wrong)", "english": "Should be: er kann" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "negation",
+      "level": "A1",
+      "title": "Negation",
+      "icon": "🚫",
+      "order": 6,
+      "description": "Learn how to form negative sentences: 'nicht' (negates verbs/adjectives) and 'kein' (negates nouns).",
+      "lessons": [
+        {
+          "id": "nicht_vs_kein",
+          "topicId": "negation",
+          "title": "Nicht vs Kein",
+          "explanation": "German has two main negations. 'nicht' negates verbs, adjectives, and adverbs. 'kein' negates nouns that would otherwise take an indefinite article (a/an). 'kein' declines like 'ein' (kein, keine, kein, keinen, keinem, keiner).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "nicht — negates verbs, adjectives, adverbs, whole sentences",
+              "examples": [
+                { "german": "Ich lese nicht", "english": "I don't read" },
+                { "german": "Er ist nicht müde", "english": "He is not tired" },
+                { "german": "Das Buch ist nicht teuer", "english": "The book is not expensive" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "kein — negates a noun when 'a/an' would be used; declines by gender/case",
+              "examples": [
+                { "german": "Ich habe kein Buch (no book)", "english": "I don't have a book" },
+                { "german": "Keine Ahnung!", "english": "No idea!" },
+                { "german": "Das ist kein Apfel", "english": "This is not an apple" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Position of 'nicht': usually before the word it negates; at the end when negating the whole verb",
+              "examples": [
+                { "german": "Ich komme nicht morgen, sondern heute", "english": "I'm not coming tomorrow but today" },
+                { "german": "Er spricht nicht Deutsch", "english": "He doesn't speak German" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich spreche nicht Deutsch", "english": "I don't speak German" },
+            { "german": "Wir haben keine Zeit", "english": "We have no time" },
+            { "german": "Das ist kein Hund, das ist eine Katze", "english": "That is not a dog, that is a cat" }
+          ],
+          "exceptions": [
+            { "german": "'nicht' vs 'kein' with definite nouns", "english": "Use 'nicht' with definite articles: Ich sehe den Mann nicht (not keinem)" }
+          ],
+          "importantNotes": [
+            "kein = 'not a / not any'.",
+            "nicht position varies: before adjective/verb-part, at end for the whole sentence."
+          ],
+          "commonMistakes": [
+            { "german": "Ich habe nicht ein Buch (wrong)", "english": "Should be: Ich habe kein Buch" },
+            { "german": "Ich sehe nicht den Mann (wrong word order)", "english": "Better: Ich sehe den Mann nicht" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "level": "A1",
+      "title": "Questions",
+      "icon": "❓",
+      "order": 7,
+      "description": "Learn to form questions: W-questions (was, wer, wann...) and yes/no questions (verb-first).",
+      "lessons": [
+        {
+          "id": "w_questions",
+          "topicId": "questions",
+          "title": "W-Questions",
+          "explanation": "W-questions use question words (interrogatives). The question word stands in position 1, the conjugated verb in position 2, and the rest follows. Common W-words: was (what), wer (who), wann (when), warum (why), wie (how), wo (where), wohin (where to), woher (where from).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Question word + verb (position 2) + rest",
+              "examples": [
+                { "german": "Was machst du?", "english": "What are you doing?" },
+                { "german": "Wer ist das?", "english": "Who is that?" },
+                { "german": "Warum lernst du Deutsch?", "english": "Why are you learning German?" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Common W-words and their meanings",
+              "examples": [
+                { "german": "Wann kommst du? (when)", "english": "When are you coming?" },
+                { "german": "Wie heißt du? (how are you called)", "english": "What's your name?" },
+                { "german": "Woher kommst du? (from where)", "english": "Where do you come from?" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Wo wohnst du?", "english": "Where do you live?" },
+            { "german": "Wohin gehst du?", "english": "Where are you going (to)?" }
+          ],
+          "exceptions": [],
+          "importantNotes": [
+            "The verb NEVER leaves position 2 in W-questions.",
+            "Wo = where (static), wohin = where to (movement)."
+          ],
+          "commonMistakes": [
+            { "german": "Was du machst (wrong)", "english": "Should be: Was machst du?" },
+            { "german": "Wie du heißt (wrong)", "english": "Should be: Wie heißt du?" }
+          ],
+          "order": 1
+        },
+        {
+          "id": "yes_no_questions",
+          "topicId": "questions",
+          "title": "Yes/No Questions",
+          "explanation": "For yes/no questions (no question word), the conjugated verb moves to position 1, before the subject. This is called 'inversion'. Answer with 'Ja' (yes) or 'Nein' (no), often repeating the verb.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Verb in position 1, then subject, then rest",
+              "examples": [
+                { "german": "Kommst du aus Berlin?", "english": "Do you come from Berlin?" },
+                { "german": "Hast du Zeit?", "english": "Do you have time?" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Short answers: Ja, ... / Nein, ...",
+              "examples": [
+                { "german": "Ja, ich komme aus Berlin", "english": "Yes, I come from Berlin" },
+                { "german": "Nein, ich habe keine Zeit", "english": "No, I don't have time" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Sprichst du Deutsch?", "english": "Do you speak German?" },
+            { "german": "Ist das dein Buch?", "english": "Is that your book?" }
+          ],
+          "exceptions": [
+            { "german": "Questions with 'wollen/möchten'", "english": "Möchtest du einen Kaffee? (Would you like a coffee?)" }
+          ],
+          "importantNotes": [
+            "Yes/no questions always start with the conjugated verb.",
+            "The subject comes immediately after the verb."
+          ],
+          "commonMistakes": [
+            { "german": "Du kommst aus Berlin? (word order wrong for a question)", "english": "Should be: Kommst du aus Berlin?" }
+          ],
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "word_order",
+      "level": "A1",
+      "title": "Word Order",
+      "icon": "🔤",
+      "order": 8,
+      "description": "Learn German sentence structure: verb position, time-manner-place, and main vs subordinate clauses.",
+      "lessons": [
+        {
+          "id": "basic_word_order",
+          "topicId": "word_order",
+          "title": "Basic Word Order",
+          "explanation": "In main clauses the conjugated verb is ALWAYS in position 2. The first position can be any element (subject, object, time). The typical order after the verb is: Subject — (not) — Time — Manner — Place — rest. With modal verbs, the main verb goes to the end.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Verb in position 2; first position flexible",
+              "examples": [
+                { "german": "Ich gehe heute Abend ins Kino", "english": "I go to the cinema tonight" },
+                { "german": "Heute Abend gehe ich ins Kino", "english": "Tonight I go to the cinema" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Time — Manner — Place order at the end",
+              "examples": [
+                { "german": "Er arbeitet morgen früh (time) im Büro (place)", "english": "He works tomorrow morning in the office" },
+                { "german": "Wir fahren mit dem Bus (manner) nach Hause (place)", "english": "We drive home by bus" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "With a modal verb, the infinitive goes to the END",
+              "examples": [
+                { "german": "Ich will morgen nach Berlin fahren", "english": "I want to drive to Berlin tomorrow" },
+                { "german": "Er kann gut Deutsch sprechen", "english": "He can speak German well" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich lese ein interessantes Buch", "english": "I read an interesting book" },
+            { "german": "Wir spielen gerne Fußball", "english": "We like to play football" }
+          ],
+          "exceptions": [
+            { "german": "Questions and commands", "english": "In yes/no questions the verb is in position 1; in commands it is also first." }
+          ],
+          "importantNotes": [
+            "The verb is the anchor — count to it for position 2.",
+            "In subordinate clauses (weil, dass, wenn) the verb goes to the END."
+          ],
+          "commonMistakes": [
+            { "german": "Ich gehe ins Kino heute (wrong)", "english": "Better: Ich gehe heute ins Kino (time before place)" },
+            { "german": "Ich will fahren nach Berlin (wrong)", "english": "Better: Ich will nach Berlin fahren (infinitive at end)" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "cases",
+      "level": "A1",
+      "title": "Cases",
+      "icon": "📐",
+      "order": 9,
+      "description": "Learn German cases: nominative (subject) and accusative (direct object) — the two most important at A1.",
+      "lessons": [
+        {
+          "id": "nominative_accusative",
+          "topicId": "cases",
+          "title": "Nominative and Accusative",
+          "explanation": "German has four cases. At A1 you need mainly Nominative (subject — who does it?) and Accusative (direct object — whom/what does it affect?). Articles and pronouns change to show the case.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Nominative = subject (wer? was?): der, die, das / ein, eine, ein",
+              "examples": [
+                { "german": "Der Mann liest (wer liest? → der Mann)", "english": "The man reads" },
+                { "german": "Die Frau arbeitet (was arbeitet? → die Frau)", "english": "The woman works" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Accusative = direct object (wen? was?): den, die, das / einen, eine, ein",
+              "examples": [
+                { "german": "Ich sehe den Mann (wen sehe ich? → den Mann)", "english": "I see the man" },
+                { "german": "Er liebt die Musik (was liebt er? → die Musik)", "english": "He loves music" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Accusative pronouns: mich, dich, ihn, sie, es, uns, euch, Sie",
+              "examples": [
+                { "german": "Ich rufe ihn an (I call him)", "english": "I call him" },
+                { "german": "Sie sieht uns (She sees us)", "english": "She sees us" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich esse einen Apfel", "english": "I eat an apple" },
+            { "german": "Sie trinkt das Wasser", "english": "She drinks the water" },
+            { "german": "Wir kaufen das Haus", "english": "We buy the house" }
+          ],
+          "exceptions": [
+            { "german": "Accusative masculine only changes", "english": "der → den: Ich kaufe den Tisch (not das Tisch)" }
+          ],
+          "importantNotes": [
+            "Feminine and neuter articles do NOT change in accusative.",
+            "Only masculine singular changes: der → den, ein → einen."
+          ],
+          "commonMistakes": [
+            { "german": "Ich sehe der Mann (wrong)", "english": "Should be: Ich sehe den Mann" },
+            { "german": "Ich habe eine Frau gesehen (correct — feminine stays)", "english": "No change for feminine" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "prepositions",
+      "level": "A1",
+      "title": "Prepositions",
+      "icon": "🔗",
+      "order": 10,
+      "description": "Learn common German prepositions and the cases they take: accusative, dative, and two-way prepositions.",
+      "lessons": [
+        {
+          "id": "basic_prepositions",
+          "topicId": "prepositions",
+          "title": "Basic Prepositions & Cases",
+          "explanation": "Prepositions show relationships (place, time, manner). Each preposition demands a specific case. A1 prepositions are grouped by the case they take: accusative, dative, or two-way (which change by movement vs location).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Accusative prepositions: für, um, durch, gegen, ohne, bis",
+              "examples": [
+                { "german": "für mich (for me)", "english": "for me" },
+                { "german": "Ich lerne für die Prüfung", "english": "I study for the exam" },
+                { "german": "ohne dich (without you)", "english": "without you" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Dative prepositions: mit, bei, nach, seit, von, zu, aus, außer",
+              "examples": [
+                { "german": "Ich fahre mit dem Bus (mit + dative)", "english": "I travel by bus" },
+                { "german": "Er ist bei der Arbeit (bei + dative)", "english": "He is at work" },
+                { "german": "nach Hause (nach + dative)", "english": "to home" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Two-way prepositions (in, an, auf, über, unter, neben, vor, hinter, zwischen): accusative = movement, dative = location",
+              "examples": [
+                { "german": "Ich gehe in die Schule (movement → accusative)", "english": "I go into the school" },
+                { "german": "Ich bin in der Schule (location → dative)", "english": "I am in the school" },
+                { "german": "Das Buch liegt auf dem Tisch (location → dative)", "english": "The book lies on the table" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich wohne in Berlin", "english": "I live in Berlin" },
+            { "german": "Wir treffen uns vor dem Kino", "english": "We meet in front of the cinema" },
+            { "german": "Er kommt aus Deutschland", "english": "He comes from Germany" }
+          ],
+          "exceptions": [
+            { "german": "an + time", "english": "an + dative for days: am Montag (an dem Montag)" }
+          ],
+          "importantNotes": [
+            "Memorize prepositions together with their case.",
+            "Two-way: ask 'wohin?' (where to) → accusative; 'wo?' (where) → dative."
+          ],
+          "commonMistakes": [
+            { "german": "Ich wohne auf Berlin (wrong)", "english": "Should be: Ich wohne in Berlin" },
+            { "german": "Ich gehe in dem Garten (wrong for movement)", "english": "Should be: Ich gehe in den Garten (accusative, movement)" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "possessive_pronouns",
+      "level": "A1",
+      "title": "Possessive Pronouns",
+      "icon": "🔐",
+      "order": 11,
+      "description": "Learn possessive pronouns: mein, dein, sein, ihr, unser, euer, ihr, Ihr — and how they decline.",
+      "lessons": [
+        {
+          "id": "possessives_basics",
+          "topicId": "possessive_pronouns",
+          "title": "Possessive Basics",
+          "explanation": "Possessive pronouns show ownership. They decline like indefinite articles (ein/eine/ein). The form depends on the OWNER (mein = my, dein = your, etc.) and the gender/case of the owned noun. Forms: mein, dein, sein, ihr, unser, euer, ihr, Ihr.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Masculine/Neuter nominative: mein, dein, sein, ihr, unser, euer, ihr, Ihr",
+              "examples": [
+                { "german": "mein Mann, dein Tisch, sein Kind", "english": "my husband, your table, his child" },
+                { "german": "unser Auto, euer Hund", "english": "our car, your (pl.) dog" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Feminine/Plural nominative: meine, deine, seine, ihre, unsere, eure, ihre, Ihre",
+              "examples": [
+                { "german": "meine Frau, deine Katze, ihre Zeit", "english": "my wife, your cat, her time" },
+                { "german": "unsere Kinder", "english": "our children" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Accusative masculine: meinen, deinen, seinen... (like einen)",
+              "examples": [
+                { "german": "Ich sehe meinen Vater", "english": "I see my father" },
+                { "german": "Er liebt seine Frau", "english": "He loves his wife" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Das ist mein Bruder", "english": "This is my brother" },
+            { "german": "Das ist ihre Schwester", "english": "This is her sister" },
+            { "german": "Wir mögen unser Haus", "english": "We like our house" }
+          ],
+          "exceptions": [
+            { "german": "'Ihr' is ambiguous", "english": "ihr = 'her' (singular) OR 'their' (plural); Ihr (capital) = 'your' formal" }
+          ],
+          "importantNotes": [
+            "Possessives decline exactly like 'ein'.",
+            "euer often drops the 'e' in speech: eur- (eure, euren)."
+          ],
+          "commonMistakes": [
+            { "german": "ein groß Mann (wrong)", "english": "Should be: ein großer Mann (adjective ending with possessive)" },
+            { "german": "ich sehe mein Vater (wrong)", "english": "Should be: ich sehe meinen Vater (accusative)" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "level": "A1",
+      "title": "Numbers",
+      "icon": "🔢",
+      "order": 12,
+      "description": "Learn German cardinal numbers 0-100, how to build compound numbers, and use them for age, prices, and phone numbers.",
+      "lessons": [
+        {
+          "id": "cardinal_numbers",
+          "topicId": "numbers",
+          "title": "Cardinal Numbers",
+          "explanation": "German numbers follow specific patterns. Learn 0-100 for A1. Important: German builds compound numbers BACKWARDS — the ones digit comes first, then the tens (einundzwanzig = one-and-twenty = 21).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "0-12: null, eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf",
+              "examples": [
+                { "german": "eins, zwei, drei, vier, fünf", "english": "one, two, three, four, five" },
+                { "german": "elf, zwölf, dreizehn, vierzehn", "english": "eleven, twelve, thirteen, fourteen" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Tens: zwanzig, dreißig, vierzig, fünfzig, sechzig, siebzig, achtzig, neunzig",
+              "examples": [
+                { "german": "dreißig, vierzig, fünfzig", "english": "thirty, forty, fifty" },
+                { "german": "einundzwanzig (21), zweiundzwanzig (22)", "english": "twenty-one, twenty-two" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "100 = hundert; note 'eins' becomes 'ein' in compounds (einhundert)",
+              "examples": [
+                { "german": "hundert (100)", "english": "one hundred" },
+                { "german": "einhundertfünf (105)", "english": "one hundred five" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich habe 25 Jahre", "english": "I am 25 years old" },
+            { "german": "Das kostet 320 Euro", "english": "That costs 320 euros" },
+            { "german": "Meine Nummer ist 0170 123 456", "english": "My number is 0170 123 456" }
+          ],
+          "exceptions": [
+            { "german": "21 = einundzwanzig (NOT einerzwanzig)", "english": "The 'eins' loses the 's' in compounds" }
+          ],
+          "importantNotes": [
+            "Numbers are essential for prices, time, dates, and phone numbers.",
+            "Say the ones digit first in numbers above 20."
+          ],
+          "commonMistakes": [
+            { "german": "drei und zwanzig (wrong)", "english": "Should be: einundzwanzig (one-and-twenty)" },
+            { "german": "zwanzig-eins (wrong)", "english": "Should be: einundzwanzig" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "level": "A1",
+      "title": "Time",
+      "icon": "⏰",
+      "order": 13,
+      "description": "Learn to tell time in German, use the 24-hour clock, and talk about days and schedules.",
+      "lessons": [
+        {
+          "id": "telling_time",
+          "topicId": "time",
+          "title": "Telling Time",
+          "explanation": "To tell time use 'Es ist' + the hour (+ minutes). Germans often use the 24-hour clock in formal contexts. 'halb' means half past the PREVIOUS hour (halb drei = half past two = 2:30).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Full hours: Es ist + number + Uhr (e.g., Es ist drei Uhr = 3:00)",
+              "examples": [
+                { "german": "Es ist drei Uhr", "english": "It is three o'clock" },
+                { "german": "Es ist zwölf Uhr", "english": "It is twelve o'clock" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Minutes past: NACH (e.g., zehn nach drei = 3:10); Minutes to: VOR (e.g., fünf vor zwölf = 11:55)",
+              "examples": [
+                { "german": "Es ist zehn nach drei", "english": "It is ten past three (3:10)" },
+                { "german": "Es ist fünf vor zwölf", "english": "It is five to twelve (11:55)" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "halb + next hour = half past previous (halb drei = 2:30)",
+              "examples": [
+                { "german": "Es ist halb drei", "english": "It is half past two (2:30)" },
+                { "german": "Es ist Viertel nach drei (quarter past)", "english": "It is quarter past three (3:15)" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich komme um drei Uhr an", "english": "I arrive at three o'clock" },
+            { "german": "Wir treffen uns um 18 Uhr", "english": "We meet at 6 PM (24h clock)" },
+            { "german": "Der Zug fährt um 9:45 Uhr", "english": "The train leaves at 9:45" }
+          ],
+          "exceptions": [
+            { "german": "Viertel vor/nach", "english": "Viertel nach drei = 3:15; Viertel vor vier = 3:45" }
+          ],
+          "importantNotes": [
+            "Formal contexts use 24-hour format (18 Uhr = 6 PM).",
+            "'Morgen' can mean 'morning' or 'tomorrow' — context decides."
+          ],
+          "commonMistakes": [
+            { "german": "Es ist drei Uhr morgen (wrong word order)", "english": "Should be: Ich komme morgen um drei Uhr" },
+            { "german": "halb vier = 3:30 (wrong)", "english": "halb vier = half past THREE = 3:30" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "adjectives",
+      "level": "A1",
+      "title": "Adjectives",
+      "icon": "🎨",
+      "order": 14,
+      "description": "Learn German adjectives: basic forms, endings after der/ein words, and comparison (Komparativ).",
+      "lessons": [
+        {
+          "id": "adjective_endings",
+          "topicId": "adjectives",
+          "title": "Adjective Endings (Basic)",
+          "explanation": "Adjectives describe nouns. In A1 you mostly use two situations: (1) after a definite article (der/die/das) — the adjective takes a weak ending (-e, -en, -e, -en...); (2) after a possessive or indefinite article (ein/eine/mein) — endings are like 'ein' (-er, -e, -es); (3) after a linking verb with NO article — no ending (Er ist groß).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "After definite article (der/die/das): adjective gets -e (nom) / -en (acc/plural)",
+              "examples": [
+                { "german": "der große Mann (masc nom)", "english": "the big man" },
+                { "german": "die schöne Frau (fem nom)", "english": "the beautiful woman" },
+                { "german": "Ich sehe den großen Mann (masc acc)", "english": "I see the big man" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "After indefinite/possessive (ein/mein): ending like 'ein'",
+              "examples": [
+                { "german": "ein großer Mann (masc nom)", "english": "a big man" },
+                { "german": "mein neues Auto (neut nom)", "english": "my new car" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "After a linking verb (sein/werden/bleiben), no article: NO ending",
+              "examples": [
+                { "german": "Er ist groß", "english": "He is tall" },
+                { "german": "Sie ist schön", "english": "She is beautiful" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Das ist ein interessantes Buch", "english": "That is an interesting book" },
+            { "german": "Ich mag die schnelle Fahrt", "english": "I like the fast ride" },
+            { "german": "Wir haben eine kleine Wohnung", "english": "We have a small apartment" }
+          ],
+          "exceptions": [],
+          "importantNotes": [
+            "A1 uses simple forms; full adjective declension comes later.",
+            "Adjective comes BEFORE the noun."
+          ],
+          "commonMistakes": [
+            { "german": "ein groß Mann (wrong)", "english": "Should be: ein großer Mann" },
+            { "german": "der groß Mann (wrong)", "english": "Should be: der große Mann" }
+          ],
+          "order": 1
+        },
+        {
+          "id": "comparison",
+          "topicId": "adjectives",
+          "title": "Comparison (Komparativ & Superlativ)",
+          "explanation": "Adjectives can be compared. The comparative adds '-er' (or umlaut for some short adjectives); the superlative adds '-st' (or '-est' after s/t/z). Structure: als = 'than'.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Comparative = adjective + -er (klein → kleiner)",
+              "examples": [
+                { "german": "Mein Bruder ist größer als ich", "english": "My brother is bigger than me" },
+                { "german": "Dieses Buch ist interessanter", "english": "This book is more interesting" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Umlaut change for short adjectives: groß→größer, alt→älter, jung→jünger, lang→länger",
+              "examples": [
+                { "german": "Er ist älter als sie", "english": "He is older than her" },
+                { "german": "Das Kind ist jünger", "english": "The child is younger" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Superlative = -(e)st (am ...-sten) — 'am' + adjective + -sten",
+              "examples": [
+                { "german": "Das ist am besten (gut → am besten)", "english": "That is the best" },
+                { "german": "Er ist am schnellsten", "english": "He is the fastest" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Berlin ist größer als Bonn", "english": "Berlin is bigger than Bonn" },
+            { "german": "Der Kaffee ist heißer als das Wasser", "english": "The coffee is hotter than the water" }
+          ],
+          "exceptions": [
+            { "german": "Irregular comparatives", "english": "gut → besser, viel → mehr, gern → lieber" }
+          ],
+          "importantNotes": [
+            "Use 'als' for 'than' (never 'wie' in comparison).",
+            "gut → besser, viel → mehr are irregular — memorize them."
+          ],
+          "commonMistakes": [
+            { "german": "er ist mehr groß (wrong)", "english": "Should be: er ist größer" },
+            { "german": "besser als (correct, irregular)", "english": "gut → besser" }
+          ],
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "separable_verbs",
+      "level": "A1",
+      "title": "Separable Verbs",
+      "icon": "✂️",
+      "order": 15,
+      "description": "Learn separable-prefix verbs ( trennbare Verben) and how the prefix moves to the end in main clauses.",
+      "lessons": [
+        {
+          "id": "verb_separation",
+          "topicId": "separable_verbs",
+          "title": "Verb Separation",
+          "explanation": "Many German verbs have a prefix (an-, auf-, aus-, ein-, mit-, nach-, vor-, zu-, ab-, weg-) that separates from the verb in present tense main clauses. The prefix moves to the VERY END of the sentence. In questions/commands, the separated prefix joins the stem.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Main clause: verb in position 2, prefix at the END",
+              "examples": [
+                { "german": "Ich stehe morgen früh auf (aufstehen)", "english": "I get up tomorrow morning" },
+                { "german": "Er macht das Fenster zu (zumachen)", "english": "He closes the window" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Question/command: prefix stays joined to the verb",
+              "examples": [
+                { "german": "Stehst du schon auf?", "english": "Are you up already?" },
+                { "german": "Mach das Licht an! (anmachen)", "english": "Turn the light on!" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "With a modal verb, the infinitive (with prefix) stays at the end",
+              "examples": [
+                { "german": "Ich will früh aufstehen", "english": "I want to get up early" },
+                { "german": "Wir müssen das Licht anmachen", "english": "We must turn the light on" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich fahre morgen ab (abfahren)", "english": "I depart tomorrow" },
+            { "german": "Wir treffen uns später (treffen + uns = reflexive)", "english": "We meet later" },
+            { "german": "Kommst du mit? (mitkommen)", "english": "Are you coming along?" }
+          ],
+          "exceptions": [
+            { "german": "Inseparable prefixes", "english": "be-, ge-, er-, ver-, zer- NEVER separate (e.g., verstehen, bekommen)" }
+          ],
+          "importantNotes": [
+            "The prefix is stressed in speech: AUFstehen.",
+            "Do NOT separate in infinitive or with modal verbs."
+          ],
+          "commonMistakes": [
+            { "german": "Ich mach zu das Fenster (wrong)", "english": "Should be: Ich mache das Fenster zu" },
+            { "german": "Ich verstehe (correct — inseparable, no separation)", "english": "ver- never separates" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "plural",
+      "level": "A1",
+      "title": "Plural Forms",
+      "icon": "👥",
+      "order": 16,
+      "description": "Learn how German nouns form the plural and why the article becomes 'die' for all plurals.",
+      "lessons": [
+        {
+          "id": "plural_formation",
+          "topicId": "plural",
+          "title": "Forming Plurals",
+          "explanation": "German plurals are formed in five main ways: -(e)n, -e, -er, no ending (with umlaut), or -s (for foreign words). The definite article for ALL plurals is 'die'. There is no separate 'they' article by gender — everything plural is 'die'.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Plural with -(e)n: most feminine nouns and many masculines (die Frau → die Frauen)",
+              "examples": [
+                { "german": "die Frau → die Frauen", "english": "the woman → the women" },
+                { "german": "der Student → die Studenten", "english": "the student → the students" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Plural with -e (often with umlaut): many masculine and neuter (der Mann → die Männer)",
+              "examples": [
+                { "german": "der Mann → die Männer", "english": "the man → the men" },
+                { "german": "das Buch → die Bücher", "english": "the book → the books" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Plural with -er (with umlaut) for many neuter and some masculine (das Kind → die Kinder)",
+              "examples": [
+                { "german": "das Kind → die Kinder", "english": "the child → the children" },
+                { "german": "das Haus → die Häuser", "english": "the house → the houses" }
+              ]
+            },
+            {
+              "id": "rule_4",
+              "text": "Plural with -s: mostly foreign words and abbreviations (das Auto → die Autos)",
+              "examples": [
+                { "german": "das Auto → die Autos", "english": "the car → the cars" },
+                { "german": "das Hotel → die Hotels", "english": "the hotel → the hotels" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich habe zwei Katzen", "english": "I have two cats" },
+            { "german": "Die Äpfel sind rot", "english": "The apples are red" },
+            { "german": "Wir sehen die Bücher", "english": "We see the books" }
+          ],
+          "exceptions": [
+            { "german": "No simple rule by gender", "english": "Plural form must often be memorized with the noun; dictionaries show it" }
+          ],
+          "importantNotes": [
+            "All plural articles are 'die' (nom/acc) and 'den' (dat).",
+            "Learn the plural form together with each noun."
+          ],
+          "commonMistakes": [
+            { "german": "die Männer (correct) but der Männer (wrong)", "english": "Plural article is always die/den, never der" },
+            { "german": "das Bücher (wrong)", "english": "Should be: die Bücher" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "dative_case",
+      "level": "A1",
+      "title": "Dative Case",
+      "icon": "🎯",
+      "order": 17,
+      "description": "Learn the dative case (indirect object, wem?) and dative prepositions at A1.",
+      "lessons": [
+        {
+          "id": "dative_basics",
+          "topicId": "dative_case",
+          "title": "Dative Basics",
+          "explanation": "The dative case shows the indirect object (to/for whom?). It answers 'wem?'. Articles: dem (masc), der (fem), dem (neut), den (plural). Dative pronouns: mir, dir, ihm, ihr, ihm, uns, euch, ihnen, Ihnen.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Dative articles: dem, der, dem, den",
+              "examples": [
+                { "german": "Ich gebe dem Mann das Buch (wem? → dem Mann)", "english": "I give the man the book" },
+                { "german": "Er hilft der Frau (wem? → der Frau)", "english": "He helps the woman" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Dative pronouns: mir, dir, ihm, ihr, uns, euch, ihnen",
+              "examples": [
+                { "german": "Er gibt mir das Buch", "english": "He gives me the book" },
+                { "german": "Ich danke dir", "english": "I thank you" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Dative prepositions: mit, bei, nach, seit, von, zu, aus, außer (always dative)",
+              "examples": [
+                { "german": "Ich spreche mit dem Lehrer", "english": "I speak with the teacher" },
+                { "german": "Sie kommt aus der Stadt", "english": "She comes from the city" },
+                { "german": "Wir gehen zu dem Freund (zum Freund)", "english": "We go to the friend" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Das Geschenk ist für meine Mutter", "english": "The gift is for my mother" },
+            { "german": "Er antwortet der Lehrerin", "english": "He answers the teacher (fem)" },
+            { "german": "Wir danken unseren Eltern", "english": "We thank our parents" }
+          ],
+          "exceptions": [
+            { "german": "Contractions", "english": "zu + dem = zum; in + dem = im; an + dem = am" }
+          ],
+          "importantNotes": [
+            "Dative usually comes BEFORE accusative: Ich gebe dem Mann (dat) den Apfel (acc).",
+            "Many verbs require dative: helfen, danken, gefallen, antworten."
+          ],
+          "commonMistakes": [
+            { "german": "Ich helfe ihn (wrong)", "english": "Should be: Ich helfe ihm (dative)" },
+            { "german": "mit der Mann (wrong)", "english": "Should be: mit dem Mann (masc dative)" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "imperative",
+      "level": "A1",
+      "title": "Imperative",
+      "icon": "📢",
+      "order": 18,
+      "description": "Learn commands in German: du, wir, and Sie forms.",
+      "lessons": [
+        {
+          "id": "imperative_forms",
+          "topicId": "imperative",
+          "title": "Imperative Forms",
+          "explanation": "The imperative gives commands/requests. German has three forms at A1: du (informal singular), wir (let's), and Sie (formal). The verb is in position 1. For 'du', drop the -st and often add -e (or nothing for regular verbs).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "du-imperative: stem (+e optional), NO pronoun, capital first letter",
+              "examples": [
+                { "german": "Komm! (kommen)", "english": "Come!" },
+                { "german": "Mach das Licht aus!", "english": "Turn off the light!" },
+                { "german": "Lies das Buch! (lesen)", "english": "Read the book!" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "wir-imperative: same as 'wir' present, means 'let's'",
+              "examples": [
+                { "german": "Gehen wir! (Let's go!)", "english": "Let's go!" },
+                { "german": "Lernen wir Deutsch!", "english": "Let's learn German!" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Sie-imperative: infinitive + Sie (formal, polite)",
+              "examples": [
+                { "german": "Kommen Sie bitte! (Please come!)", "english": "Please come!" },
+                { "german": "Öffnen Sie das Fenster!", "english": "Open the window!" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Hilf mir!", "english": "Help me!" },
+            { "german": "Sei bitte leise! (sein)", "english": "Please be quiet!" },
+            { "german": "Trinken Sie einen Kaffee?", "english": "Have a coffee (polite offer)!" }
+          ],
+          "exceptions": [
+            { "german": "sein imperative", "english": "du: sei / wir: seien / Sie: seien Sie" }
+          ],
+          "importantNotes": [
+            "For 'du', strong verbs with vowel change (e→i) keep it: gib!, iss!, lies!.",
+            "Add 'bitte' for politeness."
+          ],
+          "commonMistakes": [
+            { "german": "Du komm! (wrong)", "english": "Should be: Komm! (no pronoun in du-imperative)" },
+            { "german": "Sei (correct for sein)", "english": "NOT 'seid' for du — du: sei" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "es_gibt",
+      "level": "A1",
+      "title": "Es gibt",
+      "icon": "🎁",
+      "order": 19,
+      "description": "Learn 'es gibt' (there is / there are) and the difference from 'da sein' (to be there).",
+      "lessons": [
+        {
+          "id": "es_gibt_usage",
+          "topicId": "es_gibt",
+          "title": "Es gibt (There is / There are)",
+          "explanation": "'es gibt' means 'there is / there are' and is used to state existence of something. IMPORTANT: the noun after 'es gibt' is ALWAYS in the accusative case (singular or plural). It is different from 'da sein' (to be located there).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "'es gibt' + accusative noun (singular or plural)",
+              "examples": [
+                { "german": "Es gibt ein Problem", "english": "There is a problem" },
+                { "german": "Es gibt viele Bücher", "english": "There are many books" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Negative: es gibt + kein/keine",
+              "examples": [
+                { "german": "Es gibt kein Brot", "english": "There is no bread" },
+                { "german": "Es gibt keine Zeit", "english": "There is no time" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "'da sein' (to be there) vs 'es gibt' (existence): Wo ist...? / Das ist da",
+              "examples": [
+                { "german": "Das Buch ist da (the book is there)", "english": "The book is there" },
+                { "german": "Was gibt es zum Essen? (what is there to eat?)", "english": "What is there to eat?" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Es gibt heute Pizza", "english": "There is pizza today" },
+            { "german": "In Berlin gibt es viele Parks", "english": "In Berlin there are many parks" }
+          ],
+          "exceptions": [
+            { "german": "Always accusative after es gibt", "english": "Even plural: Es gibt die Bücher (accusative, not den)" }
+          ],
+          "importantNotes": [
+            "'es gibt' NEVER changes — it is always 'es gibt' regardless of singular/plural.",
+            "Use 'es gibt' for existence; use 'ist/sind' for location."
+          ],
+          "commonMistakes": [
+            { "german": "Es gibt den Apfel (wrong case)", "english": "Should be: Es gibt einen Apfel (accusative)" },
+            { "german": "Es gibt die Bücher (correct — plural accusative)", "english": "Stays 'es gibt', noun in accusative" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "demonstrative_pronouns",
+      "level": "A1",
+      "title": "Demonstrative Pronouns",
+      "icon": "👉",
+      "order": 20,
+      "description": "Learn demonstrative pronouns dieser/diese/dieses (this/these) to point out specific things.",
+      "lessons": [
+        {
+          "id": "dieser_pronouns",
+          "topicId": "demonstrative_pronouns",
+          "title": "Dieser / Diese / Dieses",
+          "explanation": "Demonstrative pronouns point to specific nouns ('this' / 'that' / 'these' / 'those'). They decline like definite articles but start with 'dies-'. Forms: dieser (m), diese (f), dieses (n), diese (pl).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Singular: dieser (m), diese (f), dieses (n)",
+              "examples": [
+                { "german": "Dieser Mann ist mein Vater", "english": "This man is my father" },
+                { "german": "Diese Frau spricht Deutsch", "english": "This woman speaks German" },
+                { "german": "Dieses Buch ist neu", "english": "This book is new" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Plural: diese (these/those)",
+              "examples": [
+                { "german": "Diese Kinder spielen", "english": "These children play" },
+                { "german": "Ich mag diese Äpfel", "english": "I like these apples" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Short form 'dies' (this one) used alone",
+              "examples": [
+                { "german": "Was ist das? — Das ist dies hier", "english": "What is that? — This is this one here" },
+                { "german": "Dies ist mein Freund", "english": "This is my friend" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Wie heißt dieser Hund?", "english": "What is this dog called?" },
+            { "german": "Diese Stadt ist schön", "english": "This city is beautiful" }
+          ],
+          "exceptions": [
+            { "german": "Dies vs Das", "english": "'dies' points closer; 'das' can mean 'that' but also 'the'" }
+          ],
+          "importantNotes": [
+            "Decline 'dies-' exactly like 'der/die/das'.",
+            "Use to emphasize or distinguish one item."
+          ],
+          "commonMistakes": [
+            { "german": "dies Mann (wrong)", "english": "Should be: dieser Mann" },
+            { "german": "diese Buch (wrong)", "english": "Should be: dieses Buch" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "conjunctions",
+      "level": "A1",
+      "title": "Conjunctions",
+      "icon": "🔗",
+      "order": 21,
+      "description": "Learn coordinating conjunctions (und, aber, oder, denn, sondern) that keep verb in position 2.",
+      "lessons": [
+        {
+          "id": "coordinating_conjunctions",
+          "topicId": "conjunctions",
+          "title": "Coordinating Conjunctions",
+          "explanation": "Coordinating conjunctions join two main clauses of equal weight. They do NOT change word order — each clause keeps its verb in position 2. Key ones: und (and), aber (but), oder (or), denn (because), sondern (but rather — after a negation).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "und (and) / oder (or) — join clauses, verb stays position 2 in both",
+              "examples": [
+                { "german": "Ich lerne Deutsch und er lernt Englisch", "english": "I learn German and he learns English" },
+                { "german": "Trinkst du Kaffee oder Tee?", "english": "Do you drink coffee or tea?" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "aber (but) / denn (because) — same word order",
+              "examples": [
+                { "german": "Er ist müde, aber er arbeitet", "english": "He is tired, but he works" },
+                { "german": "Ich bleibe zu Hause, denn es regnet", "english": "I stay home because it rains" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "sondern (but rather) — used ONLY after a negation, replaces 'aber'",
+              "examples": [
+                { "german": "Er ist nicht krank, sondern müde", "english": "He is not sick but (rather) tired" },
+                { "german": "Das ist kein Hund, sondern eine Katze", "english": "That is not a dog but a cat" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Ich mag Kaffee, aber mein Bruder mag Tee", "english": "I like coffee but my brother likes tea" },
+            { "german": "Wir gehen ins Kino, denn wir haben Zeit", "english": "We go to the cinema because we have time" }
+          ],
+          "exceptions": [
+            { "german": "aber vs sondern", "english": "Use sondern only after a negated clause; otherwise use aber" }
+          ],
+          "importantNotes": [
+            "Coordinating conjunctions do NOT push the verb to the end (that is subordinating conjunctions like weil).",
+            "Both clauses are independent."
+          ],
+          "commonMistakes": [
+            { "german": "Er ist nicht krank, aber müde (slightly off)", "english": "Better: Er ist nicht krank, sondern müde" },
+            { "german": "weil (wrong here)", "english": "weil is subordinating — verb goes to end; use denn for 'because' with normal order" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "man_pronoun",
+      "level": "A1",
+      "title": "Impersonal 'man'",
+      "icon": "🕵️",
+      "order": 22,
+      "description": "Learn the impersonal pronoun 'man' (one / you / they) used for general statements.",
+      "lessons": [
+        {
+          "id": "man_usage",
+          "topicId": "man_pronoun",
+          "title": "Using 'man'",
+          "explanation": "'man' is an impersonal pronoun meaning 'one', 'you' (general), or 'they' (people in general). It is only used in the nominative singular and conjugates like 'er' (man macht, man sagt). It avoids saying a specific person.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "man = 'one / you (general) / people' — conjugates like er/sie/es",
+              "examples": [
+                { "german": "Man sagt, Deutsch ist schwer", "english": "One says / People say German is hard" },
+                { "german": "Man trinkt Kaffee in Deutschland", "english": "You drink coffee in Germany (general)" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "In accusative/dative, 'man' becomes 'einen' / 'einem' (neutral indefinite)",
+              "examples": [
+                { "german": "Man sieht ihn (one sees him)", "english": "One sees him" },
+                { "german": "Das gibt einem Zeit", "english": "That gives one time" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Wie sagt man das auf Deutsch?", "english": "How does one say that in German?" },
+            { "german": "Man lernt nie aus", "english": "One never stops learning" }
+          ],
+          "exceptions": [
+            { "german": "man vs man (indefinite)", "english": "'man' is always lowercase and impersonal" }
+          ],
+          "importantNotes": [
+            "Use 'man' to make general statements without naming who.",
+            "It always takes 3rd person singular verb forms."
+          ],
+          "commonMistakes": [
+            { "german": "Man sind (wrong)", "english": "Should be: Man ist (3rd person singular)" },
+            { "german": "man as a real person (wrong)", "english": "Do not use for specific 'he/she'" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "days_months",
+      "level": "A1",
+      "title": "Days & Months",
+      "icon": "📅",
+      "order": 23,
+      "description": "Learn the days of the week, months, seasons, and how to say dates in German.",
+      "lessons": [
+        {
+          "id": "days_months_seasons",
+          "topicId": "days_months",
+          "title": "Days, Months, Seasons",
+          "explanation": "Days of the week and months are NOT capitalized in German (except at sentence start). Seasons: der Frühling, der Sommer, der Herbst, der Winter. Dates use ordinal numbers: der erste Mai (the first of May).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Days: montag, dienstag, mittwoch, donnerstag, freitag, samstag/sonnabend, sonntag",
+              "examples": [
+                { "german": "am Montag (on Monday)", "english": "on Monday" },
+                { "german": "Ich arbeite dienstags", "english": "I work on Tuesdays" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Months: januar, februar, märz, april, mai, juni, juli, august, september, oktober, november, dezember",
+              "examples": [
+                { "german": "im Januar (in January)", "english": "in January" },
+                { "german": "Mein Geburtstag ist im Mai", "english": "My birthday is in May" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Seasons: der Frühling, der Sommer, der Herbst, der Winter (all masculine)",
+              "examples": [
+                { "german": "im Sommer (in summer)", "english": "in summer" },
+                { "german": "Der Winter ist kalt", "english": "Winter is cold" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Heute ist Donnerstag", "english": "Today is Thursday" },
+            { "german": "Wir fahren im Juli in Urlaub", "english": "We go on vacation in July" },
+            { "german": "Der 1. Mai ist ein Feiertag", "english": "May 1st is a holiday" }
+          ],
+          "exceptions": [
+            { "german": "samstag vs sonnabend", "english": "Both mean Saturday; sonnabend is regional (north)" }
+          ],
+          "importantNotes": [
+            "Use 'am' + day (am Montag), 'im' + month/season (im Juli).",
+            "Days/months are lowercase in German."
+          ],
+          "commonMistakes": [
+            { "german": "Am Montag (capital M wrong)", "english": "Should be: am Montag (lowercase)" },
+            { "german": "im Januar (correct)", "english": "Months lowercase" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "countries_nationalities",
+      "level": "A1",
+      "title": "Countries & Nationalities",
+      "icon": "🌍",
+      "order": 24,
+      "description": "Learn to name countries, say where you come from, and form nationalities/adjectives of origin.",
+      "lessons": [
+        {
+          "id": "origins",
+          "topicId": "countries_nationalities",
+          "title": "Countries & Nationalities",
+          "explanation": "To say where you are from use 'Ich komme aus + [country] (dative)'. Nationalities are adjectives and decline like normal adjectives. Most country names are neuter (das) or feminine (die), a few masculine (der).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Ich komme aus + dative country name",
+              "examples": [
+                { "german": "Ich komme aus Deutschland", "english": "I come from Germany" },
+                { "german": "Er kommt aus der Türkei", "english": "He comes from Turkey" },
+                { "german": "Sie kommt aus den USA", "english": "She comes from the USA" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Nationality adjectives (decline like adjectives): deutsch, türkisch, spanisch, russisch, amerikanisch",
+              "examples": [
+                { "german": "ein deutscher Mann", "english": "a German man" },
+                { "german": "eine türkische Frau", "english": "a Turkish woman" },
+                { "german": "Ich bin russisch", "english": "I am Russian" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Languages: Deutsch, Englisch, Spanisch, Französisch, Russisch (capitalized nouns)",
+              "examples": [
+                { "german": "Ich spreche Deutsch und Englisch", "english": "I speak German and English" },
+                { "german": "Lernst du Französisch?", "english": "Are you learning French?" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Woher kommst du? — Ich komme aus Spanien", "english": "Where are you from? — I'm from Spain" },
+            { "german": "Er ist Amerikaner", "english": "He is an American" }
+          ],
+          "exceptions": [
+            { "german": "Country names with articles", "english": "die Schweiz, die Türkei, die USA, der Iran, das Vereinigte Königreich" }
+          ],
+          "importantNotes": [
+            "Nationalities are adjectives (lowercase, declining) unless used as nouns (der Deutsche).",
+            "Languages are always capitalized nouns in German."
+          ],
+          "commonMistakes": [
+            { "german": "Ich komme von Deutschland (less common)", "english": "Prefer: Ich komme aus Deutschland" },
+            { "german": "ich spreche deutsch (wrong caps)", "english": "Should be: ich spreche Deutsch (language capitalized)" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "reflexive_verbs",
+      "level": "A1",
+      "title": "Reflexive Verbs",
+      "icon": "🪞",
+      "order": 25,
+      "description": "Learn basic reflexive verbs with 'sich' (myself, yourself...) at A1.",
+      "lessons": [
+        {
+          "id": "reflexive_basics",
+          "topicId": "reflexive_verbs",
+          "title": "Reflexive Verbs (Basic)",
+          "explanation": "Reflexive verbs have a pronoun that refers back to the subject (myself, yourself). The reflexive pronoun declines: mich (acc), dich, sich, uns, euch, sich. Common A1 reflexives: sich freuen (to be happy), sich waschen (to wash), sich interessieren für (to be interested in).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Reflexive pronouns in accusative: mich, dich, sich, uns, euch, sich",
+              "examples": [
+                { "german": "Ich wasche mich (I wash myself)", "english": "I wash myself" },
+                { "german": "Er freut sich (He is happy)", "english": "He is happy" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "sich interessieren für + accusative (to be interested in)",
+              "examples": [
+                { "german": "Ich interessiere mich für Musik", "english": "I am interested in music" },
+                { "german": "Sie interessiert sich für Sport", "english": "She is interested in sports" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Wir treffen uns um 8 Uhr", "english": "We meet (ourselves) at 8" },
+            { "german": "Freust du dich auf die Reise?", "english": "Are you looking forward to the trip?" }
+          ],
+          "exceptions": [
+            { "german": "sich with plural 'sie'", "english": "sie freuen sich (they are happy)" }
+          ],
+          "importantNotes": [
+            "Most reflexive pronouns are accusative; some are dative (sich dativ).",
+            "'sich' is the same for er/sie/es and sie/Sie."
+          ],
+          "commonMistakes": [
+            { "german": "Ich freue mich (correct) but er freut mir (wrong)", "english": "Should be: er freut sich" },
+            { "german": "wir waschen uns (correct)", "english": "NOT wir waschen uns selbst (uns is enough)" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "level": "A1",
+      "title": "Weather",
+      "icon": "🌤️",
+      "order": 26,
+      "description": "Learn to describe the weather and common weather expressions in German.",
+      "lessons": [
+        {
+          "id": "weather_expressions",
+          "topicId": "weather",
+          "title": "Weather Expressions",
+          "explanation": "Weather is described with 'es' (it) + verb or adjective. Common verbs: regnen (to rain), schneien (to snow), sonnen (die Sonne scheint). Adjectives: warm, kalt, heiß, küh, sonnig, windig, neblig.",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "es + verb: regnen, schneien, (die Sonne) scheinen",
+              "examples": [
+                { "german": "Es regnet", "english": "It is raining" },
+                { "german": "Es schneit im Winter", "english": "It snows in winter" },
+                { "german": "Die Sonne scheint", "english": "The sun is shining" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "es + adjective (with sein): warm, kalt, heiß, sonnig, windig",
+              "examples": [
+                { "german": "Es ist warm heute", "english": "It is warm today" },
+                { "german": "Das Wetter ist sonnig", "english": "The weather is sunny" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Common phrases: Wie ist das Wetter? / Das Wetter ist schön",
+              "examples": [
+                { "german": "Wie ist das Wetter heute?", "english": "What is the weather like today?" },
+                { "german": "Heute ist es kühl und windig", "english": "Today it is cool and windy" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Im Sommer ist es heiß", "english": "In summer it is hot" },
+            { "german": "Morgen wird es regnen", "english": "Tomorrow it will rain" }
+          ],
+          "exceptions": [
+            { "german": "Die Sonne scheint (not 'es scheint')", "english": "The sun shines — use die Sonne" }
+          ],
+          "importantNotes": [
+            "Weather sentences use 'es' as a dummy subject.",
+            "Adjectives after 'ist' take NO ending (es ist kalt)."
+          ],
+          "commonMistakes": [
+            { "german": "es ist kaltes (wrong)", "english": "Should be: es ist kalt (no ending after sein)" },
+            { "german": "es scheint (incomplete)", "english": "Better: die Sonne scheint" }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "common_verbs",
+      "level": "A1",
+      "title": "Common Verbs",
+      "icon": "🏃",
+      "order": 27,
+      "description": "Essential high-frequency verbs for A1 communication, beyond haben and sein.",
+      "lessons": [
+        {
+          "id": "essential_verbs",
+          "topicId": "common_verbs",
+          "title": "Essential A1 Verbs",
+          "explanation": "These high-frequency verbs appear in almost every A1 conversation. Learn their meaning and basic forms: gehen (go), kommen (come), machen (do/make), essen (eat), trinken (drink), schlafen (sleep), sprechen (speak), verstehen (understand), kaufen (buy), finden (find/like), gefallen (please), wissen (know a fact).",
+          "rules": [
+            {
+              "id": "rule_1",
+              "text": "Daily activity verbs: gehen, kommen, machen, essen, trinken, schlafen",
+              "examples": [
+                { "german": "Ich gehe zur Schule", "english": "I go to school" },
+                { "german": "Wir essen Abendbrot", "english": "We eat dinner" },
+                { "german": "Er trinkt Wasser", "english": "He drinks water" }
+              ]
+            },
+            {
+              "id": "rule_2",
+              "text": "Communication verbs: sprechen, verstehen, wissen, sagen",
+              "examples": [
+                { "german": "Ich spreche Deutsch", "english": "I speak German" },
+                { "german": "Verstehst du mich?", "english": "Do you understand me?" },
+                { "german": "Ich weiß das nicht", "english": "I don't know that" }
+              ]
+            },
+            {
+              "id": "rule_3",
+              "text": "Preference verbs: gefallen (to please, dative!), finden (to find/think), mögen (to like)",
+              "examples": [
+                { "german": "Das Buch gefällt mir (pleases me)", "english": "I like the book (lit. the book pleases me)" },
+                { "german": "Ich finde den Film gut", "english": "I find the film good (I like it)" },
+                { "german": "Ich mag dich", "english": "I like you" }
+              ]
+            }
+          ],
+          "examples": [
+            { "german": "Was machst du beruflich?", "english": "What do you do for a living?" },
+            { "german": "Wie findest du die Stadt?", "english": "How do you like the city?" }
+          ],
+          "exceptions": [
+            { "german": "gefallen takes dative", "english": "Das gefällt mir (NOT ich) — the thing is subject, person is dative" }
+          ],
+          "importantNotes": [
+            "gefallen = 'to please' — the person is in dative (mir, dir).",
+            "finden + adjective = opinion ('I find it good' = I like it)."
+          ],
+          "commonMistakes": [
+            { "german": "Ich gefalle das Buch (wrong)", "english": "Should be: Das Buch gefällt mir" },
+            { "german": "ich weiß (correct) vs ich kenne (know a person/thing)", "english": "wissen = fact, kennen = acquaintance" }
+          ],
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

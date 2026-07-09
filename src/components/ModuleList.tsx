@@ -1,5 +1,6 @@
 import { getModules } from '../utils/csvParser';
 import { Word } from '../utils/types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   words: Word[];
@@ -24,14 +25,15 @@ function getModuleDisplay(module: string) {
 }
 
 export default function ModuleList({ words, knownCounts, totalCounts, onSelect, onBack }: Props) {
+  const { t } = useLanguage();
   const modules = getModules(words);
 
   return (
     <div className="screen">
       <button className="btn btn-nav-back" onClick={onBack}>
-        ← Назад
+        {t.back}
       </button>
-      <h2>Выберите модуль</h2>
+      <h2>{t.selectModule}</h2>
       
       {/* Module grid — square tiles */}
       <div className="module-tile-grid">

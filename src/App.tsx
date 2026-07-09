@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from 'react';
 import { Word, Screen, BlitzCard } from './utils/types';
 import { loadWords, getWordsByTopic, getTopics, getModules } from './utils/csvParser';
 import { useProgress } from './hooks/useProgress';
+import { useGrammarProgress } from './hooks/useGrammarProgress';
+import { useLanguage } from './contexts/LanguageContext';
 import MainScreen from './components/MainScreen';
 import ModuleList from './components/ModuleList';
 import TopicList from './components/TopicList';
@@ -11,11 +13,17 @@ import BlitzResult from './components/BlitzResult';
 import TopicResult from './components/TopicResult';
 import TestModal from './components/TestModal';
 import DayStatsModal from './components/DayStatsModal';
+import LanguageSwitcher from './components/LanguageSwitcher';
+import GrammarLevelList from './components/GrammarLevelList';
+import GrammarTopicList from './components/GrammarTopicList';
+import GrammarLesson from './components/GrammarLesson';
+import GrammarPractice from './components/GrammarPractice';
+import { useGrammar } from './hooks/useGrammar';
+import { A1_TASK_COLLECTIONS } from './grammar/content/a1/tasks';
+import type { TaskCollection } from './grammar/content/task.types';
 import './App.css';
 
 const BLITZ_COUNT = 10;
-
-// DAILY_GOAL used for reference, kept for documentation
 const DAILY_GOAL = 20;
 
 function shuffle<T>(arr: T[]): T[] {
@@ -32,16 +40,21 @@ function normalize(s: string): string {
 }
 
 export default function App() {
+  const { t, dir } = useLanguage();
   const [words, setWords] = useState<Word[]>([]);
   const [screen, setScreen] = useState<Screen>('main');
   const [selectedModule, setSelectedModule] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   
-  // Session words - fixed snapshot for the learning session
-  const [sessionWords, setSessionWords] = useState<Word[]>([]);
+  const [selectedGrammarLevel, setSelectedGrammarLevel] = useState<string>('A1');
+  const [selectedGrammarTopic, setSelectedGrammarTopic] = useState<string>('');
+  const [grammarTopics, setGrammarTopics] = useState<any[]>([]);
+  const [lessonsByTopic, setLessonsByTopic] = useState<Record<string, any[]>>({});
   
-const { 
+  const [sessionWords, setSessionWords] = useState<Word[]>([]);
+
+  const { 
     progress,
     setCardStatus, 
     getKnownCount, 
@@ -56,33 +69,44 @@ const {
     resetTopicTestProgress
   } = useProgress();
 
-  // Blitz state
+  const { 
+    lessonProgress, 
+    recordLessonComplete,
+  } = useGrammarProgress();
+
   const [blitzCards, setBlitzCards] = useState<BlitzCard[]>([]);
   const [blitzIndex, setBlitzIndex] = useState(0);
   const [blitzResult, setBlitzResult] = useState<'pending' | 'correct' | 'incorrect'>('pending');
   const [blitzCorrect, setBlitzCorrect] = useState(0);
-
-  // Session statistics
   const [sessionKnown, setSessionKnown] = useState(0);
   const [sessionUnknown, setSessionUnknown] = useState(0);
 
-// Test modal state
   const [showTestModal, setShowTestModal] = useState(false);
   const [pendingTopic, setPendingTopic] = useState('');
-  // Note: repeatTopic kept for future feature
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_repeatTopic, setRepeatTopic] = useState(false);
-  const [isTopicTest, setIsTopicTest] = useState(false); // Track if we're in topic test mode
+  const [isTopicTest, setIsTopicTest] = useState(false);
 
-  // Day stats modal
   const [showDayStats, setShowDayStats] = useState(false);
   const [selectedDayDate, setSelectedDayDate] = useState('');
+
+  const { initialized, topics, engine } = useGrammar(true);
+  const grammarEngineTopics = useMemo(() => topics ?? [], [topics]);
+
+  useEffect(() => {
+    if (initialized) {
+      setGrammarTopics(grammarEngineTopics);
+      const lessonsMap: Record<string, any[]> = {};
+      grammarEngineTopics.forEach((topic: any) => {
+        lessonsMap[topic.id] = lessonsMap[topic.id] ?? [];
+      });
+      setLessonsByTopic(lessonsMap);
+    }
+  }, [initialized, grammarEngineTopics]);
 
   useEffect(() => {
     loadWords().then(setWords);
   }, []);
 
-  // All words for the current topic (used for display/stats only)
   const topicWordsAll = useMemo(
     () => getWordsByTopic(words, selectedModule, selectedTopic),
     [words, selectedModule, selectedTopic]
@@ -90,7 +114,6 @@ const {
 
   const currentWord = sessionWords[currentCardIndex] ?? null;
 
-  // Progress data for modules
   const moduleKnownCounts = useMemo(() => {
     const result: Record<string, number> = {};
     for (const m of getModules(words)) {
@@ -108,7 +131,6 @@ const {
     return result;
   }, [words]);
 
-  // Progress data for topics
   const topicKnownCounts = useMemo(() => {
     const result: Record<string, number> = {};
     const topics = getTopics(words, selectedModule);
@@ -145,7 +167,54 @@ const {
   const modulePercent = totalModuleWords > 0 ? Math.round((knownCount / totalModuleWords) * 100) : 0;
   const dailyGoalPercent = Math.min(100, Math.round((todayLearned / DAILY_GOAL) * 100));
 
-  // Get week dates and stats
+  const grammarCompletedLessons = Object.keys(lessonProgress).filter(id => lessonProgress[id]?.completed).length;
+  const grammarProgress = grammarTopics.length > 0 ? Math.round((grammarCompletedLessons / grammarTopics.length) * 100) : 0;
+
+  const grammarLevels = Array.from(new Set(grammarTopics.map((t: any) => t.level))).sort();
+
+  const grammarLevelCounts = useMemo(() => {
+    const result: Record<string, { known: number; total: number }> = {};
+    grammarLevels.forEach(level => {
+      const levelTopics = grammarTopics.filter((t: any) => t.level === level);
+      result[level] = {
+        known: 0,
+        total: levelTopics.length,
+      };
+    });
+    return result;
+  }, [grammarTopics, grammarLevels]);
+
+  const grammarLevelTotalCounts = useMemo(() => {
+    const result: Record<string, number> = {};
+    grammarTopics.forEach((t: any) => {
+      result[t.level] = (result[t.level] ?? 0) + 1;
+    });
+    return result;
+  }, [grammarTopics]);
+
+  const lessonProgressMap = useMemo(() => {
+    const map: Record<string, { completed: boolean }> = {};
+    Object.entries(lessonProgress).forEach(([id, progress]) => {
+      map[id] = { completed: progress.completed };
+    });
+    return map;
+  }, [lessonProgress]);
+
+  const topicExercises = useMemo(() => {
+    if (!selectedGrammarTopic || !engine) return [];
+    try {
+      return engine.getExercises(selectedGrammarTopic);
+    } catch {
+      return [];
+    }
+  }, [selectedGrammarTopic, engine, initialized]);
+
+  /** Find TaskCollection by matching topic ID prefix (e.g. a1-phonetics -> a1-phonetics-tasks) */
+  const currentTaskCollection = useMemo<TaskCollection | undefined>(() => {
+    if (!selectedGrammarTopic) return undefined;
+    const taskId = selectedGrammarTopic + '-tasks';
+    return A1_TASK_COLLECTIONS.find(tc => tc.id === taskId);
+  }, [selectedGrammarTopic]);
   const weekStats = getWeekStats();
 
   const handleSwipeRight = () => {
@@ -173,7 +242,7 @@ const {
     }
   };
 
-const handleStartLearning = () => {
+  const handleStartLearning = () => {
     setScreen('modules');
   };
 
@@ -198,7 +267,7 @@ const handleStartLearning = () => {
     const allWords = getWordsByTopic(words, selectedModule, topicName);
     const wordsToLearn = repeat
       ? allWords
-      : allWords.filter((w) => !isFullyKnown([w.id])); // Filter ONCE at session start
+      : allWords.filter((w) => !isFullyKnown([w.id]));
     setSessionWords(wordsToLearn);
     setSelectedTopic(topicName);
     setCurrentCardIndex(0);
@@ -208,16 +277,13 @@ const handleStartLearning = () => {
     setScreen('cards');
   };
 
-const handleStartTopicTest = () => {
+  const handleStartTopicTest = () => {
     setShowTestModal(false);
     const topicWords = getWordsByTopic(words, selectedModule, pendingTopic);
     const topicKey = `${selectedModule}::${pendingTopic}`;
     const testProgress = getTopicTestProgress(topicKey);
     
-    // Filter out words that were already answered correctly
     const remainingWords = topicWords.filter(w => !testProgress[w.id]?.correct);
-    
-    // If all words were already answered correctly, reset progress and use all words
     const wordsToTest = remainingWords.length > 0 ? remainingWords : topicWords;
     
     const shuffled = shuffle(wordsToTest);
@@ -232,52 +298,49 @@ const handleStartTopicTest = () => {
 
   const handleBackToModules = () => {
     setScreen('modules');
-    setSessionWords([]); // Reset session words
+    setSessionWords([]);
   };
   
   const handleBackToTopics = () => {
     setScreen('topics');
     setCurrentCardIndex(0);
     setShowTestModal(false);
-    setSessionWords([]); // Reset session words
+    setSessionWords([]);
   };
   
   const handleBackToMain = () => {
     setScreen('main');
-    setSessionWords([]); // Reset session words
+    setSessionWords([]);
   };
 
-// Blitz handlers - get 10 random KNOWN words (learned in cards, not fully completed topics)
-const handleBlitz = () => {
-  // Get all words that have been marked as known (learned in any session)
-  const knownWordIds = Object.keys(progress)
-    .filter(key => progress[parseInt(key)] === 'known')
-    .map(key => parseInt(key));
+  const handleBlitz = () => {
+    const knownWordIds = Object.keys(progress)
+      .filter(key => progress[parseInt(key)] === 'known')
+      .map(key => parseInt(key));
   
-  const sourceWords = selectedModule 
-    ? words.filter((w) => w.module === selectedModule && knownWordIds.includes(w.id))
-    : words.filter((w) => knownWordIds.includes(w.id));
+    const sourceWords = selectedModule 
+      ? words.filter((w) => w.module === selectedModule && knownWordIds.includes(w.id))
+      : words.filter((w) => knownWordIds.includes(w.id));
   
-  if (sourceWords.length === 0) {
-    return; // Defensive: no known words available
-  }
-  const shuffled = shuffle(sourceWords);
-  const selected = shuffled.slice(0, Math.min(BLITZ_COUNT, shuffled.length));
-  setBlitzCards(selected.map((w) => ({ word: w, userAnswer: '', status: 'pending' })));
-  setBlitzIndex(0);
-  setBlitzResult('pending');
-  setBlitzCorrect(0);
-  setScreen('blitz');
-};
+    if (sourceWords.length === 0) {
+      return;
+    }
+    const shuffled = shuffle(sourceWords);
+    const selected = shuffled.slice(0, Math.min(BLITZ_COUNT, shuffled.length));
+    setBlitzCards(selected.map((w) => ({ word: w, userAnswer: '', status: 'pending' })));
+    setBlitzIndex(0);
+    setBlitzResult('pending');
+    setBlitzCorrect(0);
+    setScreen('blitz');
+  };
 
-const handleBlitzAnswer = (answer: string) => {
+  const handleBlitzAnswer = (answer: string) => {
     const card = blitzCards[blitzIndex];
     const isCorrect = normalize(answer) === normalize(card.word.word);
 
     if (isCorrect) {
       setCardStatus(card.word.id, 'known');
       setBlitzCorrect((c) => c + 1);
-      // Save progress for topic test
       if (isTopicTest) {
         const topicKey = `${selectedModule}::${selectedTopic}`;
         markTopicTestWordCorrect(topicKey, card.word.id);
@@ -308,7 +371,7 @@ const handleBlitzAnswer = (answer: string) => {
     }, 1500);
   };
 
-const handleBlitzFinish = () => {
+  const handleBlitzFinish = () => {
     setScreen('blitz-result');
   };
 
@@ -318,17 +381,42 @@ const handleBlitzFinish = () => {
     handleStartTopicTest();
   };
 
-  // Handle day click in This Week section
   const handleDayClick = (date: string) => {
     setSelectedDayDate(date);
     setShowDayStats(true);
   };
 
-  // Check if all words in topic are fully known (for unlocking test)
+  const handleGrammarOpen = () => {
+    setScreen('grammar-levels');
+  };
+
+  const handleGrammarLevelSelect = (level: string) => {
+    setSelectedGrammarLevel(level);
+    setGrammarTopics((all: any[]) => (all ?? []).filter((t: any) => t.level === level));
+    setScreen('grammar-topics');
+  };
+
+  const handleGrammarTopicSelect = (topicId: string) => {
+    setSelectedGrammarTopic(topicId);
+    setScreen('grammar-lesson');
+  };
+
+  const handleGrammarLessonNext = () => {
+    if (selectedGrammarTopic) {
+      recordLessonComplete(selectedGrammarTopic);
+    }
+    setScreen('grammar-practice');
+  };
+
+  const handleGrammarPracticeBack = () => {
+    setScreen('grammar-lesson');
+  };
+
   const topicFullyKnown = topicWordsAll.length > 0 && isFullyKnown(topicWordsAll.map(w => w.id));
 
   return (
-    <div className="app">
+    <div className="app" dir={dir}>
+      <LanguageSwitcher />
       {screen === 'main' && (
         <MainScreen
           words={words}
@@ -337,8 +425,10 @@ const handleBlitzFinish = () => {
           dailyGoalPercent={dailyGoalPercent}
           streak={streak}
           weekStats={weekStats}
+          grammarProgress={grammarProgress}
           onDayClick={handleDayClick}
           onStartLearning={handleStartLearning}
+          onGrammar={handleGrammarOpen}
           onExit={handleBackToMain}
           onBlitz={handleBlitz}
         />
@@ -369,11 +459,11 @@ const handleBlitzFinish = () => {
       {screen === 'cards' && (
         <div className="screen cards-screen">
           <button className="btn btn-nav-back" onClick={handleBackToTopics}>
-            ← Назад
+            {t.back}
           </button>
-          <div className="card-mode-label">Изучение</div>
+          <div className="card-mode-label">{t.learning}</div>
           <div className="card-counter">
-            {sessionWords.length > 0 ? `${currentCardIndex + 1} / ${sessionWords.length}` : 'Нет слов'}
+            {sessionWords.length > 0 ? `${currentCardIndex + 1} / ${sessionWords.length}` : t.noCards}
           </div>
           {currentWord ? (
             <SwipeableCard
@@ -384,7 +474,7 @@ const handleBlitzFinish = () => {
             />
           ) : (
             <div style={{ color: '#888', textAlign: 'center', marginTop: '40px' }}>
-              Нет доступных карточек для изучения
+              {t.noCards}
             </div>
           )}
         </div>
@@ -404,29 +494,27 @@ const handleBlitzFinish = () => {
         />
       )}
 
-      {screen === 'blitz' && (
-        blitzCards.length > 0 && blitzCards[blitzIndex] ? (
-          <BlitzTest
-            key={blitzIndex + blitzCards[blitzIndex].word.id}
-            word={blitzCards[blitzIndex].word}
-            total={blitzCards.length}
-            index={blitzIndex}
-            result={blitzResult}
-            onAnswer={handleBlitzAnswer}
-            onDontKnow={handleBlitzDontKnow}
-            onFinish={handleBlitzFinish}
-          />
-        ) : (
-          <div className="screen blitz-test-screen">
-            <div className="blitz-waiting">No words available for Blitz Test</div>
-            <button className="btn btn-nav-back" onClick={handleBackToMain}>
-              ← Back to Main
-            </button>
-          </div>
-        )
-      )}
+      {screen === 'blitz' && blitzCards.length > 0 && blitzCards[blitzIndex] ? (
+        <BlitzTest
+          key={blitzIndex + blitzCards[blitzIndex].word.id}
+          word={blitzCards[blitzIndex].word}
+          total={blitzCards.length}
+          index={blitzIndex}
+          result={blitzResult}
+          onAnswer={handleBlitzAnswer}
+          onDontKnow={handleBlitzDontKnow}
+          onFinish={handleBlitzFinish}
+        />
+      ) : screen === 'blitz' ? (
+        <div className="screen blitz-test-screen">
+          <div className="blitz-waiting">No words available for Blitz Test</div>
+          <button className="btn btn-nav-back" onClick={handleBackToMain}>
+            ← Back to Main
+          </button>
+        </div>
+      ) : null}
 
-{screen === 'blitz-result' && (
+      {screen === 'blitz-result' && (
         <BlitzResult
           total={blitzCards.length}
           correct={blitzCorrect}
@@ -439,8 +527,47 @@ const handleBlitzFinish = () => {
             setBlitzCards(selected.map((w) => ({ word: w, userAnswer: '', status: 'pending' })));
             setScreen('blitz');
           }}
-          onRetryTopicTest={isTopicTest ? undefined : handleTopicTestRetry}
           onBackToModules={handleBackToModules}
+        />
+      )}
+
+      {screen === 'grammar-levels' && (
+        <GrammarLevelList
+          knownCounts={grammarLevelCounts}
+          totalCounts={grammarLevelTotalCounts}
+          levels={grammarLevels}
+          onSelect={handleGrammarLevelSelect}
+          onBack={handleBackToMain}
+        />
+      )}
+
+      {screen === 'grammar-topics' && (
+        <GrammarTopicList
+          topics={grammarTopics}
+          levelName={selectedGrammarLevel}
+          lessonsByTopic={lessonsByTopic}
+          lessonProgress={lessonProgressMap}
+          onSelect={handleGrammarTopicSelect}
+          onBack={handleBackToMain}
+        />
+      )}
+
+      {screen === 'grammar-lesson' && selectedGrammarTopic && (
+        <GrammarLesson
+          topic={grammarTopics.find(t => t.id === selectedGrammarTopic)!}
+          completed={!!lessonProgress[selectedGrammarTopic]?.completed}
+          onNext={handleGrammarLessonNext}
+          onBack={() => setScreen('grammar-topics')}
+        />
+      )}
+
+      {screen === 'grammar-practice' && selectedGrammarTopic && (
+        <GrammarPractice
+          topic={grammarTopics.find(t => t.id === selectedGrammarTopic)!}
+          exercises={topicExercises}
+          taskCollection={currentTaskCollection}
+          onBack={handleGrammarPracticeBack}
+          onFinish={() => setScreen('grammar-topics')}
         />
       )}
 

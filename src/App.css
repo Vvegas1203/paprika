@@ -834,6 +834,16 @@ body {
   border-color: var(--success);
 }
 
+/* Topic List Title (shared by Topics and Grammar Topics) */
+.topic-list-title {
+  width: 100%;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
 /* Topic Result */
 .topic-result-screen {
   justify-content: center;
@@ -1292,6 +1302,78 @@ body {
   transition: width 0.4s ease;
 }
 
+/* Language Switcher Dropdown - top right */
+.language-switcher-select {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 1000;
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.language-switcher-select:focus {
+  border-color: var(--accent);
+}
+
+.language-switcher-select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* RTL Support for Arabic */
+.app[dir="rtl"] {
+  text-align: right;
+}
+
+.app[dir="rtl"] .language-switcher-select {
+  right: auto;
+  left: 16px;
+}
+
+.app[dir="rtl"] .btn-nav-back {
+  align-self: flex-end;
+}
+
+.app[dir="rtl"] .swipe-hint-left {
+  left: auto;
+  right: 8px;
+}
+
+.app[dir="rtl"] .swipe-hint-right {
+  right: auto;
+  left: 8px;
+}
+
+.app[dir="rtl"] .orange-banner {
+  padding-right: 24px;
+  padding-left: 110px;
+}
+
+.app[dir="rtl"] .nested-circles-badge {
+  right: auto;
+  left: 16px;
+}
+
+.app[dir="rtl"] .banner-text-area {
+  text-align: right;
+}
+
+.app[dir="rtl"] .modal-close {
+  right: auto;
+  left: 16px;
+}
+
 /* Progress Circle */
 .progress-circle {
   position: relative;
@@ -1312,4 +1394,464 @@ body {
   font-size: 11px;
   font-weight: 700;
   color: var(--accent);
+}
+
+/* Grammar Lesson Screen */
+.grammar-lesson-screen {
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.grammar-lesson-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.grammar-lesson-container::-webkit-scrollbar {
+  display: none;
+}
+
+.grammar-lesson-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.grammar-lesson-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.grammar-lesson-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(78, 204, 163, 0.15);
+  border: 1px solid var(--success);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.grammar-section {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grammar-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grammar-explanation {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.grammar-rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grammar-rule-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.grammar-rule-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.grammar-rule-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 4px;
+  border-left: 2px solid var(--accent);
+}
+
+.grammar-example-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.grammar-examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grammar-example-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.grammar-example-card.exception-card {
+  border-color: var(--danger);
+  background: rgba(255, 107, 107, 0.08);
+}
+
+.german-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.german-text-bold {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.german-text-wrong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+.english-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.grammar-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 4px;
+}
+
+.grammar-note-item {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.grammar-mistakes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grammar-mistake-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+}
+
+.summary-section {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 140, 90, 0.08));
+  border-color: var(--accent);
+}
+
+.grammar-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grammar-summary-content p:first-child {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.grammar-summary-content p:last-child {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.btn-start-practice {
+  width: 100%;
+  margin-top: 4px;
+  padding: 16px 48px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: var(--bg-primary);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.btn-start-practice:active {
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+  transform: scale(0.98);
+}
+
+/* Grammar Practice - Task Styles */
+.grammar-practice-screen {
+  gap: 16px;
+}
+
+.grammar-practice-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.grammar-practice-header {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.grammar-practice-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.grammar-practice-subtitle {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.grammar-practice-counter {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.grammar-practice-question {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.grammar-practice-instruction {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+.grammar-practice-question-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.grammar-practice-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.grammar-practice-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-option {
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.btn-option:active {
+  transform: scale(0.98);
+  background: var(--bg-card-hover);
+}
+
+.btn-option.selected {
+  border-color: var(--accent);
+  background: rgba(255, 107, 53, 0.15);
+  color: var(--accent-light);
+}
+
+.grammar-practice-input-row {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.grammar-practice-input {
+  flex: 1;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.grammar-practice-input:focus {
+  border-color: var(--accent);
+}
+
+.grammar-practice-input::placeholder {
+  color: var(--text-muted);
+}
+
+.btn-check {
+  padding: 14px 24px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.btn-check:active {
+  transform: scale(0.96);
+}
+
+.btn-check-full {
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  border-radius: 14px;
+}
+
+.btn-check:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.grammar-practice-feedback {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grammar-practice-feedback.correct {
+  background: rgba(78, 204, 163, 0.15);
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+.grammar-practice-feedback.incorrect {
+  background: rgba(255, 107, 107, 0.15);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+.grammar-correct-answer {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.grammar-correct-answer strong {
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.grammar-comparison-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.grammar-comparison-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.grammar-comparison-row:last-child {
+  border-bottom: none;
+}
+
+.grammar-comparison-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.grammar-comparison-value {
+  font-size: 16px;
+  color: var(--accent-light);
+  font-weight: 700;
 }

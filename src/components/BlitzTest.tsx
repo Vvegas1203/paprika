@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Word } from '../utils/types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   word: Word;
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export default function BlitzTest({ word, total, index, result, onAnswer, onDontKnow, onFinish }: Props) {
+  const { t, getTranslation } = useLanguage();
+  const localizedTranslation = getTranslation(word.id, word.translation);
   const [input, setInput] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,11 +44,11 @@ export default function BlitzTest({ word, total, index, result, onAnswer, onDont
             (e.target as HTMLImageElement).style.display = 'none';
           }}
         />
-        <div className="blitz-translation">{word.translation}</div>
+        <div className="blitz-translation">{localizedTranslation}</div>
 
         {result === 'incorrect' && (
           <div className="blitz-correct-answer">
-            Правильный ответ: <strong>{word.word}</strong>
+            {t.correctAnswer} <strong>{word.word}</strong>
           </div>
         )}
       </div>
@@ -56,7 +59,7 @@ export default function BlitzTest({ word, total, index, result, onAnswer, onDont
             <input
               className="blitz-input"
               type="text"
-              placeholder="Введите слово на иностранном языке..."
+              placeholder={t.enterWordPlaceholder}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               autoFocus
@@ -64,22 +67,22 @@ export default function BlitzTest({ word, total, index, result, onAnswer, onDont
             />
             <div className="blitz-buttons">
               <button type="submit" className="btn btn-start">
-                Ответить
+                {t.answer}
               </button>
               <button type="button" className="btn btn-dont-know" onClick={onDontKnow}>
-                Не знаю
+                {t.dontKnow}
               </button>
             </div>
           </form>
         ) : (
           <div className="blitz-waiting">
-            {result === 'correct' ? '✅ Верно!' : `❌ ${word.word}`}
+            {result === 'correct' ? t.correctEmoji : `❌ ${word.word}`}
           </div>
         )}
       </div>
 
       <button className="btn btn-finish" onClick={onFinish}>
-        Завершить
+        {t.finish}
       </button>
     </div>
   );

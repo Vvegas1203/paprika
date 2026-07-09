@@ -1,18 +1,20 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 interface Props {
   total: number;
   correct: number;
   onRetry: () => void;
-  onRetryTopicTest?: () => void;
   onBackToModules: () => void;
 }
 
-export default function BlitzResult({ total, correct, onRetry, onRetryTopicTest, onBackToModules }: Props) {
+export default function BlitzResult({ total, correct, onRetry, onBackToModules }: Props) {
+  const { t } = useLanguage();
   const incorrect = total - correct;
   const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   return (
     <div className="screen blitz-result-screen">
-      <h2>Результаты теста</h2>
+      <h2>{t.testResults}</h2>
 
       <div className="blitz-result-circle">
         <svg width="140" height="140" viewBox="0 0 140 140">
@@ -36,30 +38,25 @@ export default function BlitzResult({ total, correct, onRetry, onRetryTopicTest,
 
       <div className="blitz-result-stats">
         <div className="blitz-stat">
-          <span className="blitz-stat-label">Всего слов</span>
+          <span className="blitz-stat-label">{t.totalWords}</span>
           <span className="blitz-stat-value">{total}</span>
         </div>
         <div className="blitz-stat blitz-stat-correct">
-          <span className="blitz-stat-label">Правильно</span>
+          <span className="blitz-stat-label">{t.correct}</span>
           <span className="blitz-stat-value">{correct}</span>
         </div>
         <div className="blitz-stat blitz-stat-incorrect">
-          <span className="blitz-stat-label">Неправильно</span>
+          <span className="blitz-stat-label">{t.incorrect}</span>
           <span className="blitz-stat-value">{incorrect}</span>
         </div>
       </div>
 
-<div className="blitz-result-buttons">
+      <div className="blitz-result-buttons">
         <button className="btn btn-start" onClick={onRetry}>
-          Пройти еще раз
+          {t.retry}
         </button>
-        {onRetryTopicTest && (
-          <button className="btn btn-nav-back" onClick={onRetryTopicTest}>
-            Перепройти тему
-          </button>
-        )}
         <button className="btn btn-nav-back" onClick={onBackToModules}>
-          К модулям
+          {t.backToModules}
         </button>
       </div>
     </div>
